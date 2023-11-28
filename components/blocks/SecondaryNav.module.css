@@ -1,0 +1,47 @@
+@media screen and (min-width: 640px) {
+  .secondaryNav {
+    display: flex;
+    align-items: center;
+    padding: 10vw var(--spacing-outer) 10vw 10vw;
+    gap: 5vw;
+  }
+  .secondaryNav h2 {
+    font-size: var(--fontsize-50);
+    max-width: 11em;
+    flex: 1 1 60%;
+  }
+  .secondaryNav__nav {
+    display: flex;
+    flex: 1 1 40%;
+    gap: 1.5em;
+    justify-content: flex-start;
+  }
+  .secondaryNav__navitem {
+    text-decoration: none;
+    flex: 0 0 calc(22%);
+    position: relative;
+    display: inline-block;
+  }
+  .secondaryNav__nav__image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+    background-color: var(--color-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5vw;
+    margin: 0;
+  }
+  .secondaryNav__nav__image img, .secondaryNav__nav__image svg {
+    width: 100%;
+    height: auto;
+  }
+  .secondaryNav__navitem__label {
+    display: block;
+    font-size: var(--fontsize-20);
+    text-transform: uppercase;
+    color: var(--color-black);
+    padding: .75em 0;
+  }
+}

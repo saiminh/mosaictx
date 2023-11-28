@@ -1,0 +1,23 @@
+.button {
+  padding: var(--fontsize-20) calc(var(--fontsize-20) * 2 );
+  color: var(--color-black);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: var(--fontsize-20);
+  font-weight: 500;
+  line-height: var(--fontsize-20);
+  transition: background-color 0.1s linear;
+  display: inline-block;
+}
+.button:hover {
+  background-color: var(--color-white)!important;
+}
+.arrowspan {
+}
+.arrow {
+  vertical-align: middle;
+  margin: 0 2em 0 0;
+}
+.text {
+  vertical-align: middle;
+}

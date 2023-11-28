@@ -1,0 +1,50 @@
+.partnershipsInvestors {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--spacing-outer-large);
+}
+.text, .logos {
+  flex: 0 0 50%;
+}
+.text {
+  box-sizing: border-box;
+  padding: 0 var(--spacing-outer) 0 var(--spacing-outer-large);
+}
+.title {
+  font-size: var(--fontsize-70);
+  margin-top: 0;
+  margin-bottom: var(--fontsize-30);
+}
+.body {
+  font-size: var(--fontsize-20);
+}
+.body p {
+  max-width: 18em;
+}
+.logos {
+  display: flex;
+}
+.investor {
+  flex: 0 0 50%;
+}
+.logo {
+  margin: 0;
+  aspect-ratio: 1/1;
+  width: 100%;
+  height: auto;
+  background-color: var(--color-black);
+  padding: var(--spacing-outer);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo svg {
+  width: calc(100% - 2 * var(--spacing-outer));
+  height: auto;
+  display: block;
+}
+.logo__cic__image {
+  background-color: var(--color-white);
+}

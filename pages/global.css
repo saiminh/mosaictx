@@ -1,0 +1,50 @@
+:root {
+  --color-white: #FFFFFF;
+  --color-grey: #FAF3EF;
+  --color-grey-dark: #E5E3D6;
+  --color-black: #101313;
+  --color-orange: #FF5E2C;
+  --color-yellow: #F4FE57;
+  --color-darkblue: #031520;  
+  --color-green: #1AD0A5;
+  --color-blue: #97FAFA;
+  --fontsize-100: 16.27vw;
+  --fontsize-70: 10vw;
+  --fontsize-50: 8.1vw;
+  --fontsize-30: 4.6vw;
+  --fontsize-20: 4.6vw;
+  --spacing-outer: var(--fontsize-30);
+  --spacing-outer-medium: var(--fontsize-50);
+  --spacing-outer-large: var(--fontsize-100);
+  --navWidthDifference: 0px;
+  @media screen and (min-width: 640px) {
+    --fontsize-100: clamp(60px, 6.41vw, 400px);
+    --fontsize-70: clamp(42px, 4.48vw, 280px);
+    --fontsize-50: clamp(30px, 3.2vw, 200px);
+    --fontsize-30: clamp(28px, 1.9vw, 120px);
+    --fontsize-20: clamp(12px, 1.28vw, 80px);
+  }
+}
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Zichtbaar', sans-serif;
+  background-color: var(--color-grey);
+  scroll-behavior: smooth;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+h1, h2, h3, h4, h5, p, li, input {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+h1, h2 {
+  line-height: 0.9;
+}
+section {
+  /* overflow: auto; */
+}
+button, input, textarea {
+  font-family: 'Zichtbaar', sans-serif;
+}

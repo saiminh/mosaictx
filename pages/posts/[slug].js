@@ -1,5 +1,6 @@
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Layout } from "../../components/Layout";
-import { useTina } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { client } from "../../tina/__generated__/client";
 
 export default function Home(props) {
@@ -12,7 +13,7 @@ export default function Home(props) {
 
   return (
     <Layout>
-      <code>
+      {/* <code>
         <pre
           style={{
             backgroundColor: "lightgray",
@@ -20,7 +21,11 @@ export default function Home(props) {
         >
           {JSON.stringify(data.post, null, 2)}
         </pre>
-      </code>
+      </code> */}
+      <h1 data-tina-field={tinaField(data.post, "title")}>{data.post.title}</h1>
+      <div data-tina-field={tinaField(data.post, "body")}>
+        <TinaMarkdown content={data.post.body} />
+      </div>
     </Layout>
   );
 }
