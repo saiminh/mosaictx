@@ -45,6 +45,6 @@ h1, h2 {
 section {
   /* overflow: auto; */
 }
-button, input, textarea {
+button, input, textarea, ::placeholder {
   font-family: 'Zichtbaar', sans-serif;
 }

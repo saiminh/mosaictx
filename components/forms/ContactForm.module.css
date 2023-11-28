@@ -1,7 +1,54 @@
 .contactform {
-  position: fixed;
-  top: 100vh;
-  left: 0;
-  width: 100%;
-  height: 100vh;  
+  position: relative;
+  padding: var(--spacing-outer-medium) var(--spacing-outer-medium) 0 var(--spacing-outer-medium);
+  background-color: var(--color-grey);
+  width: 52%;
+  max-width: 800px;
+}
+.contactform__title {
+  font-size: var(--fontsize-70);
+  letter-spacing: -0.045em;
+  margin: 0 0 1em 0;
+}
+.contactform__field__row {
+  display: flex;
+  margin-bottom: 1em;
+}
+.contactform__field__row input + input {
+  margin-left: 1em;
+}
+.contactform__field__row input,
+.contactform__field__row textarea {
+  flex: 1 1 50%;
+  font-size: var(--fontsize-20);
+  padding: 1em;
+  border: none;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.contactform__field__row input::placeholder,
+.contactform__field__row textarea::placeholder {
+  font-weight: 500;
+  color: var(--color-black);
+  opacity: 1;
+}
+.contactform__field__row__buttonrow {
+  display: flex;
+  justify-content: space-between;
+  margin-right: calc( -1 * var(--spacing-outer-medium) );
+  text-transform: uppercase;
+}
+.contactform__field__row__buttonrow label {
+  display: flex;
+  align-items: center;
+  font-size: calc( 0.75 * var(--fontsize-20) );
+}
+.contactform__field__row__buttonrow input[type="checkbox"] {
+  width: 2em;
+  height: 2em;
+  border: 1px solid var(--color-black);
+  border-radius: 1px;
+  margin-left: 1em;
 }

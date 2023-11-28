@@ -3,6 +3,7 @@ import { tinaField } from "tinacms/dist/react";
 import { CldImage } from 'next-cloudinary';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import { Button } from '../Button';
+import { popupthe } from '../forms/popupthe';
 
 export const Footer = (props) => {
   const footer = props.data || {};
@@ -12,17 +13,19 @@ export const Footer = (props) => {
         <h2 className={styles.footer__title}>{footer.title}</h2>
         <div className={styles.footer__ctas} data-tina-field={tinaField(footer.contactForms)}>
           <Button 
+            type="submit"
             className={styles.footer__cta}
             text={footer.contactForms.contactButtonText}
-            href="#"
             backgroundColor="white"
+            onClick={() => popupthe('contactForm')}
           />
           { footer.contactForms.jobsButtonText && (
             <Button
+              type="submit"
               className={styles.footer__cta}
               text={footer.contactForms.jobsButtonText}
               backgroundColor="yellow"
-              href="#"
+              onClick={() => popupthe('joinForm')}
             />
           )}
         </div>
@@ -76,7 +79,7 @@ export const Footer = (props) => {
               <path fillRule="evenodd" clipRule="evenodd" d="M26.274 20.5979C24.8235 20.5979 23.6436 21.7766 23.6436 23.2254C23.6436 24.6749 24.8235 25.8541 26.274 25.8541C27.7232 25.8541 28.9023 24.6748 28.9023 23.2254C28.9023 21.7766 27.7232 20.5979 26.274 20.5979ZM28.2655 26.9641H24.2793C24.1024 26.9641 23.959 27.1075 23.959 27.2844V40.0904C23.959 40.2674 24.1024 40.4107 24.2793 40.4107H28.2655C28.4424 40.4107 28.5858 40.2674 28.5858 40.0904V27.2844C28.5858 27.1075 28.4424 26.9641 28.2655 26.9641ZM34.9024 28.1161C35.6202 27.3341 36.8037 26.6458 38.4047 26.6458C42.8946 26.6458 43.4999 29.8913 43.4999 33.0662V40.0905C43.4999 40.2674 43.3566 40.4108 43.1797 40.4108H39.2007C39.0238 40.4108 38.8804 40.2674 38.8804 40.0905V33.8643C38.8804 32.121 38.7516 30.7875 37.1307 30.7875C35.6423 30.7875 35.0624 31.6193 35.0624 33.7544V40.0904C35.0624 40.2674 34.919 40.4107 34.7421 40.4107H30.7646C30.5877 40.4107 30.4443 40.2674 30.4443 40.0904V27.2844C30.4443 27.1075 30.5877 26.9641 30.7646 26.9641H34.5821C34.759 26.9641 34.9024 27.1075 34.9024 27.2844V28.1161Z" fill="currentColor"/>
             </svg>
           </a>
-          <a className={styles.footer__links__navigation__cta}>
+          <a className={styles.footer__links__navigation__cta} onClick={() => popupthe('contactForm')}>
             <svg className={styles.nav__item__arrow} width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5.58871 1.84035L6.58871 0.840352L11.2287 5.48035V7.26035L6.58871 11.9204L5.56871 10.9004L9.42871 7.06035H0.288711V5.66035H9.44871L5.58871 1.84035Z" fill="currentColor"/>
             </svg>

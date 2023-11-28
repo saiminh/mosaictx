@@ -5,6 +5,7 @@ import { CldImage, getCldVideoUrl } from 'next-cloudinary';
 import { WorkNews } from './WorkNews';
 import { Button } from '../Button';
 import { MyVideo } from '../MyVideo';
+import { popupthe } from '../forms/popupthe';
 
 export const Work = (props) => {
 
@@ -21,7 +22,8 @@ export const Work = (props) => {
         </div>
         <div className={styles.work__intro__buttonWrapper}>
           <Button
-            href={work.intro.button.link}
+            type="submit"
+            onClick={() => popupthe('joinForm')}
             className={styles.work__intro__button} 
             text={work.intro.button.text}
             data-tina-field={tinaField(work.intro, 'button')}

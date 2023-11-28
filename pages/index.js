@@ -2,6 +2,8 @@ import { Layout } from "../components/Layout";
 import { useTina } from "tinacms/dist/react";
 import { client } from "../tina/__generated__/client";
 import { Blocks } from "../components/Blocks";
+import { ContactForm } from "../components/forms/ContactForm";
+import { JoinForm } from "../components/forms/JoinForm";
 
 export default function Home(props) {
   // data passes through in production mode and data is updated to the sidebar data in edit-mode
@@ -14,6 +16,8 @@ export default function Home(props) {
   return (
     <Layout>
       <Blocks blocks={data.page.blocks} />
+      <ContactForm />
+      <JoinForm />
     </Layout>
   );
 }

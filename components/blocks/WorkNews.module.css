@@ -71,7 +71,7 @@
 .work__news__title {
   margin-top: 0;
   font-size: var(--fontsize-30);
-  height: 4.4em;
+  height: 5.4em;
   position: relative;
 }
 .work__news__link {
@@ -86,6 +86,7 @@
 .work__news__item__meta {
   display: flex;
   gap: 2em;
+  margin-bottom: 0;
 }
 .work__news__item__meta__cat {
   text-transform: uppercase;
