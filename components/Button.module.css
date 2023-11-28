@@ -6,8 +6,10 @@
   font-size: var(--fontsize-20);
   font-weight: 500;
   line-height: var(--fontsize-20);
+  border: none;
   transition: background-color 0.1s linear;
   display: inline-block;
+  cursor: pointer;
 }
 .button:hover {
   background-color: var(--color-white)!important;
