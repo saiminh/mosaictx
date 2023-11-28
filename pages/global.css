@@ -48,3 +48,9 @@ section {
 button, input, textarea, ::placeholder {
   font-family: 'Zichtbaar', sans-serif;
 }
+figure, img {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}

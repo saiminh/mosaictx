@@ -13,6 +13,7 @@ export const PlatformComponents = (props) => {
       src: component.componentVideo || '',
       width: 530,
       height: 270,
+      format: 'mp4',
       crop: 'fill',
       gravity: 'center',
       dpr: 'auto'

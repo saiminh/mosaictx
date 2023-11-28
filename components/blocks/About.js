@@ -12,6 +12,7 @@ export const About = (props) => {
     src: props.data.video,
     width: 120,
     height: 420,
+    format: 'mp4',
     crop: 'fill',
     gravity: 'center',
     dpr: 'auto'
@@ -21,6 +22,7 @@ export const About = (props) => {
     src: props.data.video,
     width: 530,
     height: 275,
+    format: 'mp4',
     crop: 'fill',
     gravity: 'center',
     dpr: 'auto'

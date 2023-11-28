@@ -13,6 +13,7 @@ export const PlatformResults = (props) => {
       src: result.resultVideo || '',
       width: 530,
       height: 270,
+      format: 'mp4',
       crop: 'fill',
       gravity: 'center',
       dpr: 'auto'

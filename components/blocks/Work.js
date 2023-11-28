@@ -110,6 +110,7 @@ export const Work = (props) => {
                 src: work.values.video || '',
                 width: 275,
                 height: 275,
+                format: 'mp4',
                 crop: 'fill',
                 gravity: 'center',
                 dpr: 'auto'

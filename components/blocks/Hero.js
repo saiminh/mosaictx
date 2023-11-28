@@ -12,6 +12,7 @@ export const Hero = (props) => {
     src: props.data.heroVideo || '',
     width: 780,
     height: 885,
+    format: 'mp4',
     crop: 'fill',
     gravity: 'center',
     dpr: 'auto'

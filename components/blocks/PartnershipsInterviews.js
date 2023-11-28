@@ -41,6 +41,7 @@ export const PartnershipsInterviews = (props) => {
                   src: interview.interview || '',
                   width: 530,
                   height: 275,
+                  format: 'mp4',
                   crop: 'fill',
                   gravity: 'center',
                   dpr: 'auto'
@@ -56,6 +57,7 @@ export const PartnershipsInterviews = (props) => {
                   src: interview.ambientVideo || '',
                   width: 226,
                   height: 150,
+                  format: 'mp4',
                   crop: 'fill',
                   gravity: 'center',
                   dpr: 'auto'
