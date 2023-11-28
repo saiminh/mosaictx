@@ -1,6 +1,8 @@
 import gsap from "gsap"
 
 export const popupthe = (popup) => {
+  let nav = document.querySelector('.nav')
+  document.body.style.overflow = 'hidden'
   const target = document.querySelector(`[data-popup-name="${popup}"]`)
   const targetInner = target?.querySelector('.popup__inner')
   const content = target?.querySelector('.popup__inner > *')
@@ -10,6 +12,9 @@ export const popupthe = (popup) => {
     setTimeout(() => {
       gsap.set(target, {yPercent: 0, backgroundColor: 'rgba(0,0,0,0)'})
       target.removeEventListener('click', clickListener )
+      if ( !nav.classList.contains('nav--open') ) {
+        document.body.style.overflow = 'auto'
+      } 
     }, 500)
     
   }

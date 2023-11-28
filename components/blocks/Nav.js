@@ -10,8 +10,10 @@ export const Nav = (props) => {
   const navToggleClass = navtoggled  ? `${styles['navbar--open']}` : '';
   
   const [windowScrolled, setWindowScrolled] = useState(false);
+
   useEffect(() => {
     let currentScrollPos = window.scrollY;
+    
     const handleScroll = () => {
       const newScrollPos = window.scrollY;
       if (newScrollPos > currentScrollPos) {
@@ -21,6 +23,7 @@ export const Nav = (props) => {
       }
       currentScrollPos = newScrollPos;   
     };
+
     window.addEventListener('scroll', handleScroll);
 
     function setNavLinksActualWidth() { 
@@ -34,12 +37,13 @@ export const Nav = (props) => {
     setNavLinksActualWidth()
     window.addEventListener('resize', setNavLinksActualWidth());
 
+    document.body.style.overflow = navtoggled ? 'hidden' : 'auto';
   })
   
   const navScrollClass = windowScrolled ? `${styles['navbar--scrolled']}` : '';
 
   return(
-    <div className={`${styles.nav} ${navToggleClass} ${navScrollClass} nav`}>
+    <div className={`${styles.nav} ${navToggleClass} ${navScrollClass} nav ${navtoggled && 'nav--open' }`}>
       <a className={styles.nav__logo} href="#home" onClick={() => setToggled(false)}>
         <svg width="87" height="20" viewBox="0 0 87 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M63.9468 19.9992C60.3658 19.9992 58.3564 17.2942 58.3564 13.8421C58.3564 10.3384 60.3658 7.65918 63.9468 7.65918C66.4199 7.65918 67.9656 8.94728 68.79 10.7764L66.8579 11.7296C66.1881 10.2354 65.1318 9.69439 63.9468 9.69439C62.0146 9.69439 60.675 11.2659 60.675 13.8421C60.675 16.3925 61.9888 17.964 63.9468 17.964C65.1318 17.964 66.1623 17.4488 66.8579 15.9546L68.79 16.882C67.9399 18.7111 66.4457 19.9992 63.9468 19.9992Z" fill="#101313"/>
@@ -72,7 +76,7 @@ export const Nav = (props) => {
             {item.text}
             </a>
           ))}
-          <a className={`${styles.nav__item} ${styles.nav__item__cta} nav__item`} onClick={() => popupthe('contactForm')}>
+          <a className={`${styles.nav__item} ${styles.nav__item__cta} nav__item`} onClick={() => popupthe('joinForm')}>
             <svg className={styles.nav__item__arrow} width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5.58871 1.84035L6.58871 0.840352L11.2287 5.48035V7.26035L6.58871 11.9204L5.56871 10.9004L9.42871 7.06035H0.288711V5.66035H9.44871L5.58871 1.84035Z" fill="currentColor"/>
             </svg>

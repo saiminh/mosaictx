@@ -1,95 +1,200 @@
-.joinForm {
-  position: relative;
-  padding: var(--spacing-outer-medium) var(--spacing-outer-medium) 0 var(--spacing-outer-medium);
-  background-color: var(--color-grey);
-  width: 52%;
-  max-width: 800px;
+@media screen and (max-width: 639.9px) {
+  .joinForm {
+    position: relative;
+    padding: var(--spacing-outer-medium) var(--spacing-outer-medium) 0 var(--spacing-outer-medium);
+    background-color: var(--color-grey);
+    width: calc(100% - 2 * var(--spacing-outer));
+    box-sizing: border-box;
+  }
+  .joinForm__title {
+    font-size: var(--fontsize-70);
+    letter-spacing: -0.045em;
+    margin: 0 0 .5em 0;
+  }
+  .joinForm__header {
+    margin-bottom: 1em;
+  }
+  .joinForm__field__row input,
+  .joinForm__field__row textarea {
+    width: calc(100% - 1 * var(--spacing-outer-medium));
+    font-size: calc(0.75 * var(--fontsize-20));
+    padding: 1em;
+    border: none;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-bottom: 1em;
+  }
+  .joinForm__field__row input::placeholder,
+  .joinForm__field__row textarea::placeholder {
+    font-weight: 500;
+    color: var(--color-black);
+    opacity: 1;
+  }
+  .joinForm__field__row__buttonrow {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: calc( -1 * var(--spacing-outer-medium) );
+    text-transform: uppercase;
+  }
+  .joinForm__field__row input[type="checkbox"] {
+    width: 2em;
+    height: 2em;
+    border: 1px solid var(--color-black);
+    border-radius: 1px;
+    margin-left: 1em;
+  }
+  .joinForm__field__row__resume {
+    justify-content: space-between;
+  }
+  .joinForm__field__row__resume > * {
+    flex: 0 0 calc(50% - 0.5em);
+  }
+  .joinForm__field__row__resume label {
+    display: flex;
+    align-items: center;
+    font-size: calc( 0.75 * var(--fontsize-20) );
+    text-transform: uppercase;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .joinForm__field__row__resume label input {
+    flex: 0 0 2em;
+  }
+  .joinForm__field__row input[type="file"] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  .joinForm__field__row label[for="resume"] {
+    cursor: pointer;
+    font-size: calc( 0.75 * var(--fontsize-20));
+    padding: 1em;
+    border: none;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 500;
+    letter-spacing: 0;
+    background: url("data:image/svg+xml,%3Csvg width='19' height='20' viewBox='0 0 19 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.9925 11.2677L10.1242 3.13601C11.4911 1.76918 13.7071 1.76918 15.074 3.13601C16.4408 4.50285 16.4408 6.71893 15.074 8.08576L6.23514 16.9246C5.45409 17.7056 4.18776 17.7056 3.40671 16.9246C2.62566 16.1435 2.62566 14.8772 3.40671 14.0962L11.5384 5.96444C11.7337 5.76918 12.0503 5.76918 12.2455 5.96444C12.4408 6.1597 12.4408 6.47629 12.2455 6.67155L4.82092 14.0962L6.23514 15.5104L13.6598 8.08576C14.6361 7.10945 14.6361 5.52654 13.6598 4.55023C12.6834 3.57392 11.1005 3.57392 10.1242 4.55023L1.9925 12.682C0.430399 14.2441 0.430399 16.7767 1.9925 18.3388C3.55459 19.9009 6.08725 19.9009 7.64935 18.3388L16.4882 9.49997C18.6361 7.35209 18.6361 3.86968 16.4882 1.7218C14.3403 -0.426083 10.8579 -0.426084 8.71001 1.7218L0.578282 9.85353L1.9925 11.2677Z' fill='black'/%3E%3C/svg%3E%0A"), linear-gradient(
+      90deg, 
+      var(--color-white) 0 0, 
+      var(--color-white) calc(100% - 3em) 0, 
+      var(--color-grey-dark) calc(100% - 3em) 0,
+      var(--color-grey-dark) 100% 0
+    );
+    background-repeat: no-repeat;
+    background-position: calc(100% - .85em) center, 100%;
+    padding-right: 4em;
+    box-sizing: border-box;
+  }
 }
-.joinForm__title {
-  font-size: var(--fontsize-70);
-  letter-spacing: -0.045em;
-  margin: 0 0 1em 0;
-}
-.joinForm__field__row {
-  display: flex;
-  margin-bottom: 1em;
-}
-.joinForm__field__row input + input {
-  margin-left: 1em;
-}
-.joinForm__field__row input,
-.joinForm__field__row textarea {
-  flex: 1 1 50%;
-  font-size: var(--fontsize-20);
-  padding: 1em;
-  border: none;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 500;
-  letter-spacing: 0;
-}
-.joinForm__field__row input::placeholder,
-.joinForm__field__row textarea::placeholder {
-  font-weight: 500;
-  color: var(--color-black);
-  opacity: 1;
-}
-.joinForm__field__row__buttonrow {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: calc( -1 * var(--spacing-outer-medium) );
-  text-transform: uppercase;
-}
-.joinForm__field__row input[type="checkbox"] {
-  width: 2em;
-  height: 2em;
-  border: 1px solid var(--color-black);
-  border-radius: 1px;
-  margin-left: 1em;
-}
-.joinForm__field__row__resume {
-  justify-content: space-between;
-}
-.joinForm__field__row__resume > * {
-  flex: 0 0 calc(50% - 0.5em);
-}
-.joinForm__field__row__resume label {
-  display: flex;
-  align-items: center;
-  font-size: calc( 0.75 * var(--fontsize-20) );
-  text-transform: uppercase;
-  justify-content: center;
-  box-sizing: border-box;
-}
-.joinForm__field__row__resume label input {
-  flex: 0 0 2em;
-}
-.joinForm__field__row input[type="file"] {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-.joinForm__field__row label[for="resume"] {
-  cursor: pointer;
-  font-size: var(--fontsize-20);
-  padding: 1em;
-  border: none;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 500;
-  letter-spacing: 0;
-  background: url("data:image/svg+xml,%3Csvg width='19' height='20' viewBox='0 0 19 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.9925 11.2677L10.1242 3.13601C11.4911 1.76918 13.7071 1.76918 15.074 3.13601C16.4408 4.50285 16.4408 6.71893 15.074 8.08576L6.23514 16.9246C5.45409 17.7056 4.18776 17.7056 3.40671 16.9246C2.62566 16.1435 2.62566 14.8772 3.40671 14.0962L11.5384 5.96444C11.7337 5.76918 12.0503 5.76918 12.2455 5.96444C12.4408 6.1597 12.4408 6.47629 12.2455 6.67155L4.82092 14.0962L6.23514 15.5104L13.6598 8.08576C14.6361 7.10945 14.6361 5.52654 13.6598 4.55023C12.6834 3.57392 11.1005 3.57392 10.1242 4.55023L1.9925 12.682C0.430399 14.2441 0.430399 16.7767 1.9925 18.3388C3.55459 19.9009 6.08725 19.9009 7.64935 18.3388L16.4882 9.49997C18.6361 7.35209 18.6361 3.86968 16.4882 1.7218C14.3403 -0.426083 10.8579 -0.426084 8.71001 1.7218L0.578282 9.85353L1.9925 11.2677Z' fill='black'/%3E%3C/svg%3E%0A"), linear-gradient(
-    90deg, 
-    var(--color-white) 0 0, 
-    var(--color-white) calc(100% - 3em) 0, 
-    var(--color-grey-dark) calc(100% - 3em) 0,
-    var(--color-grey-dark) 100% 0
-  );
-  background-repeat: no-repeat;
-  background-position: calc(100% - .85em) center, 100%;
-  padding-right: 4em;
-  box-sizing: border-box;
+@media screen and (min-width: 640px) {
+  .joinForm {
+    position: relative;
+    padding: var(--spacing-outer-medium) var(--spacing-outer-medium) 0 var(--spacing-outer-medium);
+    background-color: var(--color-grey);
+    width: 52%;
+    max-width: 800px;
+  }
+  .joinForm__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3em;
+    gap: 2em;
+  }
+  .joinForm__title {
+    font-size: var(--fontsize-70);
+    letter-spacing: -0.045em;
+    margin: 0 0 1em 0;
+    flex-basis: 40%;
+    margin: 0;
+  }
+  .joinForm__field__row {
+    display: flex;
+    margin-bottom: 1em;
+  }
+  .joinForm__field__row input + input {
+    margin-left: 1em;
+  }
+  .joinForm__field__row input,
+  .joinForm__field__row textarea {
+    flex: 1 1 50%;
+    font-size: var(--fontsize-20);
+    padding: 1em;
+    border: none;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+  .joinForm__field__row input::placeholder,
+  .joinForm__field__row textarea::placeholder {
+    font-weight: 500;
+    color: var(--color-black);
+    opacity: 1;
+  }
+  .joinForm__field__row__buttonrow {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: calc( -1 * var(--spacing-outer-medium) );
+    text-transform: uppercase;
+  }
+  .joinForm__field__row input[type="checkbox"] {
+    width: 2em;
+    height: 2em;
+    border: 1px solid var(--color-black);
+    border-radius: 1px;
+    margin-left: 1em;
+  }
+  .joinForm__field__row__resume {
+    justify-content: space-between;
+  }
+  .joinForm__field__row__resume > * {
+    flex: 0 0 calc(50% - 0.5em);
+  }
+  .joinForm__field__row__resume label {
+    display: flex;
+    align-items: center;
+    font-size: calc( 0.75 * var(--fontsize-20) );
+    text-transform: uppercase;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .joinForm__field__row__resume label input {
+    flex: 0 0 2em;
+  }
+  .joinForm__field__row input[type="file"] {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  .joinForm__field__row label[for="resume"] {
+    cursor: pointer;
+    font-size: var(--fontsize-20);
+    padding: 1em;
+    border: none;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 500;
+    letter-spacing: 0;
+    background: url("data:image/svg+xml,%3Csvg width='19' height='20' viewBox='0 0 19 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.9925 11.2677L10.1242 3.13601C11.4911 1.76918 13.7071 1.76918 15.074 3.13601C16.4408 4.50285 16.4408 6.71893 15.074 8.08576L6.23514 16.9246C5.45409 17.7056 4.18776 17.7056 3.40671 16.9246C2.62566 16.1435 2.62566 14.8772 3.40671 14.0962L11.5384 5.96444C11.7337 5.76918 12.0503 5.76918 12.2455 5.96444C12.4408 6.1597 12.4408 6.47629 12.2455 6.67155L4.82092 14.0962L6.23514 15.5104L13.6598 8.08576C14.6361 7.10945 14.6361 5.52654 13.6598 4.55023C12.6834 3.57392 11.1005 3.57392 10.1242 4.55023L1.9925 12.682C0.430399 14.2441 0.430399 16.7767 1.9925 18.3388C3.55459 19.9009 6.08725 19.9009 7.64935 18.3388L16.4882 9.49997C18.6361 7.35209 18.6361 3.86968 16.4882 1.7218C14.3403 -0.426083 10.8579 -0.426084 8.71001 1.7218L0.578282 9.85353L1.9925 11.2677Z' fill='black'/%3E%3C/svg%3E%0A"), linear-gradient(
+      90deg, 
+      var(--color-white) 0 0, 
+      var(--color-white) calc(100% - 3em) 0, 
+      var(--color-grey-dark) calc(100% - 3em) 0,
+      var(--color-grey-dark) 100% 0
+    );
+    background-repeat: no-repeat;
+    background-position: calc(100% - .85em) center, 100%;
+    padding-right: 4em;
+    box-sizing: border-box;
+  }
 }

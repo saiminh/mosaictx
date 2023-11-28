@@ -22,22 +22,8 @@ export const JoinForm = (props) => {
   return (
     <Popup popupname="joinForm">
       <div className={styles.joinForm}>
-        <div 
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginBottom: '3em',
-            gap: '2em'
-          }}
-        >
-          <h1 
-            className={styles.joinForm__title}
-            style={{
-              flexBasis: '40%',
-              margin: '0'
-            }}
-          >
+        <div className={styles.joinForm__header}>
+          <h1 className={styles.joinForm__title} >
             Join The Team
           </h1>
           <p style={{ flexBasis: '60%', margin: '0'}}>Join our team and harness your skills to make a meaningful impact on the well-being of cancer patients. If you're motivated by the opportunity to transform lives through groundbreaking innovation, we'd love to connect with you.</p>
