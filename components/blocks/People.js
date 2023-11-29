@@ -9,6 +9,7 @@ export const People = (props) => {
   useEffect(() => {
     const slider = document.querySelector('.slider');
     slider.addEventListener('wheel', (e) => mouseWheelHandler(e), { passive: false });
+    touchMoveHandler(slider);
   })
 
   return(
@@ -34,8 +35,7 @@ export const People = (props) => {
       <div 
         className={`${styles.people__slider} slider`}
         data-slider-x="0"
-        // onWheel={mouseWheelHandler}
-        onLoad={ (el) => touchMoveHandler(el) }
+        
       >
         <div className={styles.people__slider__filter}>
           <button data-filter="leadership" onClick={filterSlides}>Leadership</button>
@@ -60,7 +60,6 @@ export const People = (props) => {
                   alt={person.imageAlt ? person.imageAlt : 'This image is lacking an alt description'}
                   width="787"
                   height="885"
-                  style={{ width: '100%', height: 'auto'}}
                   sizes='(max-width: 768px) 73vw, 34vw'
                 />
               </div>
@@ -101,14 +100,6 @@ export const People = (props) => {
               onClick={closeSlide}
             >
               <div className={`${styles.people__popup__item__box} people__popup__item__box`}>
-                <button 
-                  className={styles.people__popup__item__close} 
-                  onClick={closeSlide}>
-                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M19.9403 0.0877336L21.5971 1.7446L1.74468 21.5971L0.0878067 19.9402L19.9403 0.0877336Z" fill="#101313"/>
-                  <path d="M1.49786e-06 1.83383L1.83384 -1.01708e-05L21.6863 19.8524L19.8525 21.6863L1.49786e-06 1.83383Z" fill="#101313"/>
-                  </svg>  
-                </button>
                 <div className={styles.people__popup__item__image}>
                   <CldImage 
                     src={person.image || ''}

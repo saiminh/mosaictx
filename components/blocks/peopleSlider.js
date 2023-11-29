@@ -94,9 +94,9 @@ export const mouseWheelHandler = (e) => {
   }
 }
 
-export const touchMoveHandler = (e) => {
-  e.target.addEventListener('touchstart', handleTouchStart, false);        
-  e.target.addEventListener('touchmove', handleTouchMove, false);
+export const touchMoveHandler = (target) => {
+  target.addEventListener('touchstart', handleTouchStart, true);        
+  target.addEventListener('touchmove', handleTouchMove, true);
 
   var xDown = null;                                                        
   var yDown = null;
@@ -106,9 +106,9 @@ export const touchMoveHandler = (e) => {
   }                                                     
                                                                          
   function handleTouchStart(evt) {
-      const firstTouch = getTouches(evt)[0];                                      
-      xDown = firstTouch.clientX;                                      
-      yDown = firstTouch.clientY;                                      
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
   };                                                
                                                                          
   function handleTouchMove(evt) {
@@ -123,13 +123,16 @@ export const touchMoveHandler = (e) => {
       var yDiff = yDown - yUp;
                                                                          
       if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-          if ( xDiff > 0 ) {
-              /* right swipe */ 
-              nextSlide(e);
-          } else {
-              /* left swipe */
-              prevSlide(e);
-          }                       
+      
+        evt.preventDefault();
+
+        if ( xDiff > 0 ) {
+          /* right swipe */ 
+          nextSlide(evt);
+        } else {
+          /* left swipe */
+          prevSlide(evt);
+        }                       
       } 
       /* reset values */
       xDown = null;
