@@ -11,13 +11,16 @@
   --fontsize-100: 16.27vw;
   --fontsize-70: 10vw;
   --fontsize-50: 8.1vw;
-  --fontsize-30: 4.6vw;
+  --fontsize-30: 6.9vw;
   --fontsize-20: 4.6vw;
-  --spacing-outer: var(--fontsize-30);
+  --spacing-outer: var(--fontsize-20);
   --spacing-outer-medium: var(--fontsize-50);
   --spacing-outer-large: var(--fontsize-100);
+  --nav-sizer: var(--fontsize-20);
+  --nav-space-around: var(--spacing-outer);
   --navWidthDifference: 0px;
   @media screen and (min-width: 640px) {
+    --spacing-outer: var(--fontsize-30);
     --fontsize-100: clamp(60px, 6.41vw, 400px);
     --fontsize-70: clamp(42px, 4.48vw, 280px);
     --fontsize-50: clamp(30px, 3.2vw, 200px);
@@ -53,4 +56,20 @@ figure, img {
   width: 100%;
   height: auto;
   overflow: hidden;
+}
+input[type="checkbox"] {
+  width: 1em;
+  height: 1em;
+  font-size: 1em;
+  padding: 1em;
+  border: 1px solid var(--color-black);
+  border-radius: 2px;
+  background-color: var(--color-white);
+  -webkit-appearance: none ;
+}
+input[type="checkbox"]:checked {
+  background-position: center;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='%23000000' height='800px' width='800px' version='1.1' id='Capa_1' viewBox='0 0 490 490' xml:space='preserve'%3E%3Cpolygon points='452.253,28.326 197.831,394.674 29.044,256.875 0,292.469 207.253,461.674 490,54.528 '/%3E%3C/svg%3E");
 }
