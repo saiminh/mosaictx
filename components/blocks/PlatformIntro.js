@@ -1,8 +1,8 @@
-import styles from './PlatformInfo.module.css';
+import styles from './PlatformIntro.module.css';
 import { CldImage } from 'next-cloudinary';
 import { tinaField } from "tinacms/dist/react";
 
-export const PlatformInfo = (props) => {
+export const PlatformIntro = (props) => {
 
   const intro = props.data || {};
   return (

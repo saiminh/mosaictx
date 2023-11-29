@@ -41,7 +41,7 @@ export const JoinForm = (props) => {
               <input type="file" name="resume" id="resume" placeholder='Attach CV' onChange={upDateLabel} />
               <label htmlFor="resume">Attach CV</label>
             </div>
-            <label>Agree to our privacy policy <input type="checkbox" name="agree" required /></label>
+            <label className={styles.joinForm__field__row__ppcheck}>Agree to our privacy policy <input type="checkbox" name="agree" required /></label>
           </div>
           <div className={styles.joinForm__field__row__buttonrow}>
             <Button 

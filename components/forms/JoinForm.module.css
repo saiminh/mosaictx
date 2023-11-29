@@ -4,6 +4,7 @@
     padding: var(--spacing-outer-medium) var(--spacing-outer-medium) 0 var(--spacing-outer-medium);
     background-color: var(--color-grey);
     width: calc(100% - 2 * var(--spacing-outer));
+    margin-bottom: 100px;
     box-sizing: border-box;
   }
   .joinForm__title {
@@ -14,10 +15,11 @@
   .joinForm__header {
     margin-bottom: 1em;
   }
-  .joinForm__field__row input,
+  .joinForm__field__row input[type="text"],
+  .joinForm__field__row input[type="email"],
   .joinForm__field__row textarea {
     width: calc(100% - 1 * var(--spacing-outer-medium));
-    font-size: calc(0.75 * var(--fontsize-20));
+    font-size: clamp(16px, var(--fontsize-20), 20px);
     padding: 1em;
     border: none;
     text-transform: uppercase;
@@ -38,26 +40,25 @@
     margin-right: calc( -1 * var(--spacing-outer-medium) );
     text-transform: uppercase;
   }
-  .joinForm__field__row input[type="checkbox"] {
-    width: 2em;
-    height: 2em;
-    border: 1px solid var(--color-black);
-    border-radius: 1px;
-    margin-left: 1em;
+  .joinForm__field__row__ppcheck {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: calc( 0.75 * var(--fontsize-20) );
+    text-transform: uppercase;
+    box-sizing: border-box;
+  }
+  .joinForm__field__row__ppcheck input[type="checkbox"] {
+    margin-right: 1em;
+    align-self: center;
   }
   .joinForm__field__row__resume {
     justify-content: space-between;
+    margin-bottom: 1em;
   }
   .joinForm__field__row__resume > * {
     flex: 0 0 calc(50% - 0.5em);
-  }
-  .joinForm__field__row__resume label {
-    display: flex;
-    align-items: center;
-    font-size: calc( 0.75 * var(--fontsize-20) );
-    text-transform: uppercase;
-    justify-content: center;
-    box-sizing: border-box;
   }
   .joinForm__field__row__resume label input {
     flex: 0 0 2em;
@@ -74,6 +75,7 @@
     cursor: pointer;
     font-size: calc( 0.75 * var(--fontsize-20));
     padding: 1em;
+    margin-bottom: 1em;
     border: none;
     text-transform: uppercase;
     display: block;
@@ -91,7 +93,12 @@
     padding-right: 4em;
     box-sizing: border-box;
   }
+  /* .joinForm__field__row__buttonrow {
+    position: sticky;
+    bottom: 0;
+  } */
 }
+
 @media screen and (min-width: 640px) {
   .joinForm {
     position: relative;
@@ -121,7 +128,8 @@
   .joinForm__field__row input + input {
     margin-left: 1em;
   }
-  .joinForm__field__row input,
+  .joinForm__field__row input[type="text"],
+  .joinForm__field__row input[type="email"],
   .joinForm__field__row textarea {
     flex: 1 1 50%;
     font-size: var(--fontsize-20);
@@ -145,10 +153,6 @@
     text-transform: uppercase;
   }
   .joinForm__field__row input[type="checkbox"] {
-    width: 2em;
-    height: 2em;
-    border: 1px solid var(--color-black);
-    border-radius: 1px;
     margin-left: 1em;
   }
   .joinForm__field__row__resume {

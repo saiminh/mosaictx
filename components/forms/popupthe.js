@@ -16,7 +16,6 @@ export const popupthe = (popup) => {
         document.body.style.overflow = 'auto'
       } 
     }, 500)
-    
   }
   gsap.set(target, {yPercent: -100, backgroundColor: 'rgba(0,0,0,0)'})
   gsap.set(targetInner, {yPercent: 100})
