@@ -1,35 +1,47 @@
-@media screen and (min-width: 640px) {
+@media screen and (max-width: 639.9px) {
   .interview {
+    padding: var(--spacing-outer-large) 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    min-height: 90vh;
-    padding-bottom: calc( 2 * var(--spacing-outer-large) );
+    grid: auto 23vw 23vw 23vw 23vw 23vw 23vw 23vw / repeat(7, 1fr);
   }
   .interview__text {
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 6;
-    padding: var(--spacing-outer) var(--spacing-outer-large);
-  }
-  .interview__title {
-    font-size: var(--fontsize-70);
-    line-height: 0.9;
-    margin-bottom: var(--spacing-outer);
-  }
-  .interview__body {
-    font-size: var(--fontsize-20);
-    max-width: 18em;
-  }
-  .interview__media {
-    grid-column: 3 / span 2;
-    grid-row: 1 / span 9;
-    display: grid;
-    grid-template: repeat(9, 1fr) / 1fr;
+    margin-bottom: 2em;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 7;
+    padding: var(--spacing-outer);
   }
   .interview__video__interview {
     margin: 0;
     position: relative;
-    grid-row: 1 / span 7;
+    grid-row: 2 / span 6;
+    grid-column: 3 / span 5;
+  }
+  .interview__video__ambient {
+    position: relative;
+    margin: 0;
+    grid-row: 8 / span 1;
+    grid-column: 5 / span 3;
+  }
+  .interview__info {
+    position: relative;
+    z-index: 1;
+    grid-row: 7 / span 2;
+    grid-column: 1 / span 4;
+    background-color: var(--color-green);
+    padding: var(--spacing-outer);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .interview__text__title {
+    font-size: var(--fontsize-70);
+    line-height: 0.9;
+    margin-top: 0;
+    margin-bottom: var(--spacing-outer);
+  }
+  .interview__text__body {
+    font-size: var(--fontsize-20);
+    max-width: 18em;
   }
   .interview__video__interview video {
     display: block;
@@ -37,26 +49,92 @@
     height: 100%;
     object-fit: cover;
   }
+  .interview__video__ambient video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .interview__info__logo {
+    width: 100%;
+    max-height: var(--spacing-outer-medium); 
+    margin: 0;
+  }
+  .interview__info__logo__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left;
+  }
+  .interview__role, 
+  .interview__organisation {
+    font-size: var(--fontsize-20);
+    text-transform: uppercase;
+    max-width: 11em;
+  }
+  .interview__role {
+    margin: .33em 0;
+  }
+  .interview__name {
+    font-size: var(--fontsize-30);
+    font-weight: 400;
+  }
+}
+@media screen and (min-width: 640px) {
+  .interview {
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    min-height: 90vh;
+    padding-bottom: calc( 2 * var(--spacing-outer-large) );
+  }
+  .interview__text {
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 6;
+    padding: var(--spacing-outer) var(--spacing-outer-large);
+  }
+  .interview__video__interview {
+    margin: 0;
+    position: relative;
+    grid-row: 1 / span 7;
+    grid-column: 5 / span 4;
+  }
   .interview__video__ambient {
     position: relative;
     margin: 0;
     grid-row: 8 / span 2;
-  }
-  .interview__video__ambient video {
-    aspect-ratio: 1.5;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    grid-column: 5 / span 2;
   }
   .interview__info {
     position: relative;
-    grid-column: 2 / span 1;
+    grid-column: 3 / span 2;
     grid-row: 7 / span 3;
     background-color: var(--color-green);
     padding: var(--spacing-outer);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  .interview__text__title {
+    font-size: var(--fontsize-70);
+    line-height: 0.9;
+    margin-bottom: var(--spacing-outer);
+  }
+  .interview__text__body {
+    font-size: var(--fontsize-20);
+    max-width: 18em;
+  }
+  .interview__video__interview video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .interview__video__ambient video {
+    aspect-ratio: 1.5;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
   .interview__info__logo {
     width: 100%;

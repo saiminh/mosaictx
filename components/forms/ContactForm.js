@@ -16,11 +16,12 @@ export const ContactForm = (props) => {
             <textarea name="message" placeholder='Message' rows="4" required></textarea>
           </div>
           <div className={styles.contactform__field__row__buttonrow}>
-            <label>Agree to our privacy policy <input type="checkbox" name="agree" required /></label>
+            <label className={styles.contactform__field__row__ppcheck}>Agree to our privacy policy <input type="checkbox" name="agree" required /></label>
             <Button 
               type="submit" 
               text="Send"
               backgroundColor="yellow"
+              className={styles.contactform__field__row__buttonrow__button}
             />
           </div>
         </form>

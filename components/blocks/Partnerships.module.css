@@ -3,7 +3,7 @@
     position: relative;
   }
   .intro {
-    padding: calc( 2 * var(--spacing-outer-large) ) var(--spacing-outer);
+    padding: var(--spacing-outer-large) var(--spacing-outer);
     align-items: baseline;
   }
   .intro__title {

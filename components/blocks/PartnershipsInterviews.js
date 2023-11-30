@@ -11,8 +11,8 @@ export const PartnershipsInterviews = (props) => {
       { interviews?.map((interview, i) => (
         <div className={styles.interview} key={i}>
           <div className={styles.interview__text}>
-            <h3 className={styles.interview__title} data-tina-field={tinaField(interview, 'title')}>{interview.title}</h3>
-            <div className={styles.interview__body} data-tina-field={tinaField(interview, 'body')}>
+            <h3 className={styles.interview__text__title} data-tina-field={tinaField(interview, 'title')}>{interview.title}</h3>
+            <div className={styles.interview__text__body} data-tina-field={tinaField(interview, 'body')}>
               <TinaMarkdown content={interview.body} />
             </div>
           </div>
@@ -34,39 +34,37 @@ export const PartnershipsInterviews = (props) => {
               <div className={styles.interview__organisation} data-tina-field={tinaField(interview, 'organisation')}>{interview.organisation}</div>
             </div>
           </div>
-          <div className={styles.interview__media}>
-            <figure className={styles.interview__video__interview}>
-              <MyVideo
-                src={getCldVideoUrl({
-                  src: interview.interview || '',
-                  width: 530,
-                  height: 275,
-                  format: 'mp4',
-                  crop: 'fill',
-                  gravity: 'center',
-                  dpr: 'auto'
-                })}
-                loop
-                muted
-                className={styles.interview__video__desktop}
-              />
-            </figure>
-            <figure className={styles.interview__video__ambient}>
-              <MyVideo
-                src={getCldVideoUrl({
-                  src: interview.ambientVideo || '',
-                  width: 226,
-                  height: 150,
-                  format: 'mp4',
-                  crop: 'fill',
-                  gravity: 'center',
-                  dpr: 'auto'
-                })}
-                loop
-                muted
-              />
-            </figure>
-          </div>
+          <figure className={styles.interview__video__interview}>
+            <MyVideo
+              src={getCldVideoUrl({
+                src: interview.interview || '',
+                width: 530,
+                height: 275,
+                format: 'mp4',
+                crop: 'fill',
+                gravity: 'center',
+                dpr: 'auto'
+              })}
+              loop
+              muted
+              className={styles.interview__video__desktop}
+            />
+          </figure>
+          <figure className={styles.interview__video__ambient}>
+            <MyVideo
+              src={getCldVideoUrl({
+                src: interview.ambientVideo || '',
+                width: 226,
+                height: 150,
+                format: 'mp4',
+                crop: 'fill',
+                gravity: 'center',
+                dpr: 'auto'
+              })}
+              loop
+              muted
+            />
+          </figure>
         </div>
       ))}
     </div>

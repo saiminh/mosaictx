@@ -62,7 +62,10 @@
   .people__slider__filter button {
     font-size: calc(0.75 * var(--fontsize-20));
     line-height: 1;
-    padding: calc(0.5 * var(--fontsize-20));
+    padding: calc(0.6 * var(--fontsize-20)) 
+             calc(0.5 * var(--fontsize-20)) 
+             calc(0.5 * var(--fontsize-20)) 
+             calc(0.5 * var(--fontsize-20));
     text-transform: uppercase;
     border: none;
     background: var(--color-grey);

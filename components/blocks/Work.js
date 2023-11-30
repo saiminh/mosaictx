@@ -6,9 +6,23 @@ import { WorkNews } from './WorkNews';
 import { Button } from '../Button';
 import { MyVideo } from '../MyVideo';
 import { popupthe } from '../forms/popupthe';
+import { useEffect } from 'react';
 
 export const Work = (props) => {
+  useEffect(() => {
+    
+    const allValues = Array.from(document.querySelectorAll('.work__value'));
+    allValues.forEach((value, index) => {
+      value.style.setProperty('--mobile-animation-height', value.querySelector('.work__value__body').offsetHeight + 'px');
+      value.addEventListener('click', () => {
+        value.toggleAttribute('data-active');
+      })
+      window.addEventListener('resize', () => {
+        value.style.setProperty('--mobile-animation-height', value.querySelector('.work__value__body').offsetHeight + 'px');
+      })
+    })
 
+  })
   const work = props.data || {};
   return (
     <section className={styles.work} id={work.anchor} data-tina-field={tinaField(work.intro , 'title')}>
@@ -33,7 +47,7 @@ export const Work = (props) => {
       </div>
       <div className={styles.work__values}>
         { work.values.collaboration && (
-          <div className={`${styles.work__value} ${styles.work__values__collaboration}`}>
+          <div className={`${styles.work__value} ${styles.work__values__collaboration} work__value`}>
             <CldImage
               src={work.values.collaboration.image || ''}
               alt={work.values.collaboration.imageAlt ? work.values.collaboration.imageAlt : 'This image is lacking an alt description'}
@@ -45,13 +59,13 @@ export const Work = (props) => {
             <h3 className={styles.work__value__title} data-tina-field={tinaField(work.values.collaboration, 'title')}>
               {work.values.collaboration.title}
             </h3>
-            <div className={styles.work__value__body} data-tina-field={tinaField(work.values.collaboration, 'body')}>
+            <div className={`${styles.work__value__body} work__value__body`} data-tina-field={tinaField(work.values.collaboration, 'body')}>
               <TinaMarkdown content={work.values.collaboration.body} />
             </div>
           </div>
         ) }
         { work.values.ambition && (
-          <div className={`${styles.work__value} ${styles.work__values__ambition}`}>
+          <div className={`${styles.work__value} ${styles.work__values__ambition} work__value`}>
             <CldImage
               src={work.values.ambition.image || ''}
               alt={work.values.ambition.imageAlt ? work.values.ambition.imageAlt : 'This image is lacking an alt description'}
@@ -63,13 +77,13 @@ export const Work = (props) => {
             <h3 className={styles.work__value__title} data-tina-field={tinaField(work.values.ambition, 'title')}>
               {work.values.ambition.title}
             </h3>
-            <div className={styles.work__value__body} data-tina-field={tinaField(work.values.ambition, 'body')}>
+            <div className={`${styles.work__value__body} work__value__body`} data-tina-field={tinaField(work.values.ambition, 'body')}>
               <TinaMarkdown content={work.values.ambition.body} />
             </div>
           </div>
         ) }
         { work.values.resilience && (
-          <div className={`${styles.work__value} ${styles.work__values__resilience}`}>
+          <div className={`${styles.work__value} ${styles.work__values__resilience} work__value`}>
             <CldImage
               src={work.values.resilience.image || ''}
               alt={work.values.resilience.imageAlt ? work.values.resilience.imageAlt : 'This image is lacking an alt description'}
@@ -81,13 +95,13 @@ export const Work = (props) => {
             <h3 className={styles.work__value__title} data-tina-field={tinaField(work.values.resilience, 'title')}>
               {work.values.resilience.title}
             </h3>
-            <div className={styles.work__value__body} data-tina-field={tinaField(work.values.resilience, 'body')}>
+            <div className={`${styles.work__value__body} work__value__body`} data-tina-field={tinaField(work.values.resilience, 'body')}>
               <TinaMarkdown content={work.values.resilience.body} />
             </div>
           </div>
         ) }
         { work.values.excellence && (
-          <div className={`${styles.work__value} ${styles.work__values__excellence}`}>
+          <div className={`${styles.work__value} ${styles.work__values__excellence} work__value`}>
             <CldImage
               src={work.values.excellence.image || ''}
               alt={work.values.excellence.imageAlt ? work.values.excellence.imageAlt : 'This image is lacking an alt description'}
@@ -99,7 +113,7 @@ export const Work = (props) => {
             <h3 className={styles.work__value__title} data-tina-field={tinaField(work.values.excellence, 'title')}>
               {work.values.excellence.title}
             </h3>
-            <div className={styles.work__value__body} data-tina-field={tinaField(work.values.excellence, 'body')}>
+            <div className={`${styles.work__value__body} work__value__body`} data-tina-field={tinaField(work.values.excellence, 'body')}>
               <TinaMarkdown content={work.values.excellence.body} />
             </div>
           </div>

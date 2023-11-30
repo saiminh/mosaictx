@@ -16,9 +16,11 @@ export const PartnershipsInvestors = (props) => {
       </div>
       <div className={styles.logos}>
         <div className={styles.investor}>
-          <figure className={`${styles.logo} ${styles.logo__synconia__image}`}>
-            <SynconaLogo />
-          </figure>
+          <a href={props.data.linkToSynconia || ''}>
+            <figure className={`${styles.logo} ${styles.logo__synconia__image}`}>
+              <SynconaLogo />
+            </figure>
+          </a>
           <Button 
             href={props.data.linkToSynconia || ''} 
             className={styles.logo__synconia__link} 
@@ -27,9 +29,11 @@ export const PartnershipsInvestors = (props) => {
           />
         </div>
         <div className={styles.investor}>
-          <figure className={`${styles.logo} ${styles.logo__cic__image}`}>
-            <CICLogo />
-          </figure>
+          <a href={props.data.linkToCIT || ''}>
+            <figure className={`${styles.logo} ${styles.logo__cic__image}`}>
+              <CICLogo />
+            </figure>
+          </a>
           <Button 
             href={props.data.linkToCIT || ''} 
             className={styles.logo__cit__link} 

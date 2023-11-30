@@ -1,54 +1,128 @@
-.contactform {
-  position: relative;
-  padding: var(--spacing-outer-medium) var(--spacing-outer-medium) 0 var(--spacing-outer-medium);
-  background-color: var(--color-grey);
-  width: 52%;
-  max-width: 800px;
+@media screen and (max-width: 639.9px) {
+  .contactform {
+    position: relative;
+    padding: var(--spacing-outer-medium) var(--spacing-outer-medium) 0 var(--spacing-outer-medium);
+    background-color: var(--color-grey);
+    width: calc(100% - 2 * var(--spacing-outer));
+    margin-bottom: 100px;
+    box-sizing: border-box;
+  }
+  .contactform__title {
+    font-size: var(--fontsize-70);
+    letter-spacing: -0.045em;
+    margin: 0 0 .5em 0;
+  }
+  .contactform__header {
+    margin-bottom: 1em;
+  }
+  .contactform__field__row input[type="text"],
+  .contactform__field__row input[type="email"],
+  .contactform__field__row textarea {
+    width: calc(100% - 1 * var(--spacing-outer-medium));
+    font-size: clamp(16px, var(--fontsize-20), 20px);
+    padding: 1em;
+    border: none;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin-bottom: 1em;
+  }
+  .contactform__field__row input::placeholder,
+  .contactform__field__row textarea::placeholder {
+    font-weight: 500;
+    color: var(--color-black);
+    opacity: 1;
+  }
+  .contactform__field__row__buttonrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: calc( -1 * var(--spacing-outer-medium) );
+    text-transform: uppercase;
+  }
+  .contactform__field__row__ppcheck {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: calc( 0.75 * var(--fontsize-20) );
+    text-transform: uppercase;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+  }
+  .contactform__field__row__ppcheck input[type="checkbox"] {
+    margin-right: 1em;
+    align-self: center;
+  }
+  .contactform__field__row__buttonrow__button {
+    align-self: flex-end;
+  }
+  .contactform__field__row__resume {
+    justify-content: space-between;
+    margin-bottom: 1em;
+  }
+  .contactform__field__row__resume > * {
+    flex: 0 0 calc(50% - 0.5em);
+  }
+  .contactform__field__row__resume label input {
+    flex: 0 0 2em;
+  }
 }
-.contactform__title {
-  font-size: var(--fontsize-70);
-  letter-spacing: -0.045em;
-  margin: 0 0 1em 0;
-}
-.contactform__field__row {
-  display: flex;
-  margin-bottom: 1em;
-}
-.contactform__field__row input + input {
-  margin-left: 1em;
-}
-.contactform__field__row input,
-.contactform__field__row textarea {
-  flex: 1 1 50%;
-  font-size: var(--fontsize-20);
-  padding: 1em;
-  border: none;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 500;
-  letter-spacing: 0;
-}
-.contactform__field__row input::placeholder,
-.contactform__field__row textarea::placeholder {
-  font-weight: 500;
-  color: var(--color-black);
-  opacity: 1;
-}
-.contactform__field__row__buttonrow {
-  display: flex;
-  justify-content: space-between;
-  margin-right: calc( -1 * var(--spacing-outer-medium) );
-  text-transform: uppercase;
-}
-.contactform__field__row__buttonrow label {
-  display: flex;
-  align-items: center;
-  font-size: calc( 0.75 * var(--fontsize-20) );
-}
-.contactform__field__row__buttonrow input[type="checkbox"] {
-  width: 2em;
-  height: 2em;
-  border: 1px solid var(--color-black);
-  border-radius: 1px;
-  margin-left: 1em;
+@media sceen and (min-width: 640px) {
+
+  .contactform {
+    position: relative;
+    padding: var(--spacing-outer-medium) var(--spacing-outer-medium) 0 var(--spacing-outer-medium);
+    background-color: var(--color-grey);
+    width: 52%;
+    max-width: 800px;
+  }
+  .contactform__title {
+    font-size: var(--fontsize-70);
+    letter-spacing: -0.045em;
+    margin: 0 0 1em 0;
+  }
+  .contactform__field__row {
+    display: flex;
+    margin-bottom: 1em;
+  }
+  .contactform__field__row input + input {
+    margin-left: 1em;
+  }
+  .contactform__field__row input,
+  .contactform__field__row textarea {
+    flex: 1 1 50%;
+    font-size: var(--fontsize-20);
+    padding: 1em;
+    border: none;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+  .contactform__field__row input::placeholder,
+  .contactform__field__row textarea::placeholder {
+    font-weight: 500;
+    color: var(--color-black);
+    opacity: 1;
+  }
+  .contactform__field__row__buttonrow {
+    display: flex;
+    justify-content: space-between;
+    margin-right: calc( -1 * var(--spacing-outer-medium) );
+    text-transform: uppercase;
+  }
+  .contactform__field__row__buttonrow label {
+    display: flex;
+    align-items: center;
+    font-size: calc( 0.75 * var(--fontsize-20) );
+  }
+  .contactform__field__row__buttonrow input[type="checkbox"] {
+    width: 2em;
+    height: 2em;
+    border: 1px solid var(--color-black);
+    border-radius: 1px;
+    margin-left: 1em;
+  }
 }

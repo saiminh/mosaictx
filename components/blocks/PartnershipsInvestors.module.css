@@ -1,3 +1,70 @@
+@media screen and (max-width: 639.9px) {
+  .partnershipsInvestors {
+    padding-bottom: var(--spacing-outer-large);
+  }
+  .text {
+    box-sizing: border-box;
+    padding: var(--spacing-outer);
+  }
+  .title {
+    font-size: var(--fontsize-70);
+    margin-top: 0;
+    margin-bottom: var(--fontsize-30);
+  }
+  .body {
+    font-size: var(--fontsize-20);
+  }
+  .body p {
+    max-width: 18em;
+  }
+  .logos {
+    display: flex;
+    gap: var(--spacing-outer);
+    padding: var(--spacing-outer);
+    box-sizing: border-box;
+  }
+  .investor {
+    flex: 0 0 calc(50% - 0.5 * var(--spacing-outer));
+    --investor-logo-transition: all .5s ease-in-out;
+  }
+  .logo {
+    margin: 0;
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: auto;
+    background-color: var(--color-black);
+    padding: var(--spacing-outer);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo svg {
+    width: calc(100% - 2 * var(--spacing-outer));
+    height: auto;
+    display: block;
+  }
+  .investor .logo__synconia__image {
+    transition: var(--investor-logo-transition);
+    background-color: var(--color-black);
+  }
+  .investor:hover .logo__synconia__image {
+    background-color: rgba(176, 0, 150, 1);
+  }
+  .investor .logo__cic__image {
+    background-color: var(--color-white);
+  }
+  .investor:hover .logo__cic__image svg path[fill="#e6332a"]{
+    transition: var(--investor-logo-transition);
+  }
+  .investor:hover .logo__cic__image {
+    transition: var(--investor-logo-transition);
+    background-color: #e6332a;
+  }
+  .investor:hover .logo__cic__image svg path[fill="#e6332a"]{
+    fill: var(--color-white);
+  }
+}
 @media screen and (min-width: 640px) {
   .partnershipsInvestors {
     display: flex;
@@ -28,6 +95,7 @@
   }
   .investor {
     flex: 0 0 50%;
+    --investor-logo-transition: all .5s ease-in-out;
   }
   .logo {
     margin: 0;
@@ -46,7 +114,24 @@
     height: auto;
     display: block;
   }
-  .logo__cic__image {
+  .investor .logo__synconia__image {
+    transition: var(--investor-logo-transition);
+    background-color: var(--color-black);
+  }
+  .investor:hover .logo__synconia__image {
+    background-color: rgba(176, 0, 150, 1);
+  }
+  .investor .logo__cic__image {
     background-color: var(--color-white);
+  }
+  .investor:hover .logo__cic__image svg path[fill="#e6332a"]{
+    transition: var(--investor-logo-transition);
+  }
+  .investor:hover .logo__cic__image {
+    transition: var(--investor-logo-transition);
+    background-color: #e6332a;
+  }
+  .investor:hover .logo__cic__image svg path[fill="#e6332a"]{
+    fill: var(--color-white);
   }
 }
