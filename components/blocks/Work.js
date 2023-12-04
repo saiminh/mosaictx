@@ -25,10 +25,10 @@ export const Work = (props) => {
   })
   const work = props.data || {};
   return (
-    <section className={styles.work} id={work.anchor} data-tina-field={tinaField(work.intro , 'title')}>
+    <section className={styles.work} id={work.anchor}>
 
       <div className={styles.work__intro}>
-        <h2 className={styles.work__intro__title}>
+        <h2 className={styles.work__intro__title} data-tina-field={tinaField(work.intro , 'title')}>
           {work.intro.title}
         </h2>
         <div className={styles.work__intro__body} data-tina-field={tinaField(work.intro, 'body')}>
@@ -147,8 +147,9 @@ export const Work = (props) => {
             <TinaMarkdown content={work.news.body} />
           </div>
         </div>
-
-        <WorkNews data={work.news.newsItems} />
+        <section id={ work.news.anchor ? work.news.anchor : 'news'}>
+          <WorkNews data={work.news.newsItems} />
+        </section>
 
       </div>
     </section>
