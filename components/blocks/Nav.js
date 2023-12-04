@@ -52,6 +52,33 @@ export const Nav = (props) => {
     window.addEventListener('resize', setNavLinksActualWidth());
 
     document.body.style.overflow = navtoggled ? 'hidden' : 'auto';
+
+
+    document.querySelectorAll('.nav__item').forEach((item) => {
+      const target = item.getAttribute('href') || '#home';
+      let targetElement = document.querySelector(target) || null;
+      if (targetElement === null) {
+        return;
+      }
+      
+      let options = {
+        threshold: 0.1
+      }
+      const callback = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            item.setAttribute('data-target-inview', 'true')
+          }
+           else {
+            item.removeAttribute('data-target-inview')
+          }
+        })
+      }
+      let observer = new IntersectionObserver(callback, options);
+      observer.observe(targetElement);
+      
+    })
+
   })
   
   const navScrollClass = windowScrolled ? `${styles['navbar--scrolled']}` : '';
