@@ -7,12 +7,18 @@ import { popupthe } from '../forms/popupthe';
 export const Nav = (props) => {
 
   const [navtoggled, setToggled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const navToggleClass = navtoggled  ? `${styles['navbar--open']}` : '';
   
   const [windowScrolled, setWindowScrolled] = useState(false);
 
   useEffect(() => {
     let currentScrollPos = window.scrollY;
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
     
     const handleScroll = () => {
       const newScrollPos = window.scrollY;
@@ -25,6 +31,14 @@ export const Nav = (props) => {
     };
 
     window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    })
 
     function setNavLinksActualWidth() { 
       let navLinksFullWidth = document.querySelector('.nav__links').getBoundingClientRect().width;
@@ -84,7 +98,12 @@ export const Nav = (props) => {
           </a>
         </div>
       </div>
-      <div className={styles.nav__logoicon} onClick={() => setToggled(!navtoggled)}>
+      <div 
+        className={styles.nav__logoicon} 
+        onClick={ () => { 
+          isMobile ? setToggled(!navtoggled) : setToggled(false)
+          // setToggled(!navtoggled)
+        }}>
         <svg width="63" height="62" viewBox="0 0 63 62" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="-0.00976562" width="62.4993" height="61.9638" fill="#F4FE57"/>
           <path fillRule="evenodd" clipRule="evenodd" d="M46.9742 21.8158L31.0976 12.6494L23.1594 17.233L15.2209 21.8158V40.1485L23.1596 44.7314L31.0976 49.3149L39.0357 44.7313L46.9742 40.1485V21.8158ZM29.6936 16.4473L24.453 19.4733L19.0187 22.6104L29.7685 28.6885L29.6936 16.4473ZM17.8079 24.8976V37.1397L28.4765 30.9297L17.8079 24.8976ZM19.0828 39.3909L24.4529 42.491L29.694 45.5173L29.7685 33.1709L19.0828 39.3909ZM32.2802 45.6449L43.0011 39.4552L32.3555 33.171L32.2802 45.6449ZM44.3872 37.2695V24.7714L33.6476 30.9297L44.3872 37.2695ZM43.0664 22.5468L32.2798 16.3191L32.3555 28.6885L43.0664 22.5468Z" fill="#101313"/>
