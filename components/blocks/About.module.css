@@ -24,6 +24,19 @@
   .about__video__desktop {
     display: none;
   }
+  .about__body h1, .about__body h2 {
+    font-size: var(--fontsize-70);
+  }
+  .about__body h3 {
+    font-size: var(--fontsize-30);
+    margin-bottom: calc(var(--fontsize-70) * .9)
+  }
+  .about__body__text {
+    font-size: var(--fontsize-20);
+  }
+  .about__body__text p {
+    margin-top: 0;
+  }
 }
 @media screen and (min-width: 640px) {
   .about {
