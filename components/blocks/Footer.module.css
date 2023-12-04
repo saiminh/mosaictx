@@ -39,6 +39,7 @@
   }
   .footer__address__text {
     padding: var(--spacing-outer-medium);
+    font-size: var(--fontsize-20);
     text-transform: uppercase;
     box-sizing: border-box;
   }
@@ -174,6 +175,7 @@
     display: block;
   }
   .footer__address__text {
+    font-size: var(--fontsize-20);
     padding: var(--spacing-outer-medium);
     text-transform: uppercase;
     box-sizing: border-box;
