@@ -192,12 +192,11 @@
     align-items: flex-start;
     background: rgba(0,0,0,0.5);
     opacity: 0;
+    overflow-y: scroll;
   }
   .people__popup__item__box {
     width: calc(100% - 2 * var(--spacing-outer));
     top: calc( 2 * var(--spacing-outer) + 3 * var(--nav-sizer));
-    height: 85%; 
-    overflow-y: scroll;
     position: relative;
     background: var(--color-grey-dark);
     transform: translateY(100vh);
@@ -243,6 +242,7 @@
     display: block;
     position: absolute;
     top: 0;
+    font-size: var(--fontsize-30);
     right: 0;
   }
   .people__popup__item__nameblock h3 {
@@ -267,7 +267,7 @@
     list-style: none;
   }
   .people__popup__item__text ul li {
-    font-size: var(--fontsize-20);
+    font-size: calc( 0.9 * var(--fontsize-20) );
     line-height: 1.2;
     max-width: 21em;
     margin-bottom: .5em;

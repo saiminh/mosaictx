@@ -116,7 +116,7 @@ export const People = (props) => {
                     <h3 data-tina-field={tinaField(person, 'lastname')}>{person.lastname}<sup data-tina-field={tinaField(person, 'academicTitle')}>{person.academicTitle}</sup></h3>
                     <h4 className={styles.people__popup__item__nameblock__jobtitle} data-tina-field={tinaField(person, 'jobtitle')}>{person.jobtitle}</h4>
                   </div>
-                  <ul>
+                  <ul className={styles.credentialsList}>
                     {person.credentials?.map((credential, i) => (
                       <li key={i}>{credential || ''}</li>
                     ))}
