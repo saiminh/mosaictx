@@ -37,6 +37,13 @@
     margin: 1em 0;
   }
   .people__slider {
+    --filter-font-size: calc(0.75 * var(--fontsize-20));
+    --filter-padding: calc(0.5 * var(--fontsize-20));
+    --filter-line-height: 1;
+    --filter-space-after: var(--filter-font-size);
+    --filter-totalheight: calc(var(--filter-line-height) * var(--filter-font-size) + 2 * var(--filter-padding) + var(--filter-space-after));
+    --portrait-size: 75vw;
+
     position: relative;
     display: grid;
     grid: auto auto auto / 1fr;
@@ -47,7 +54,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vw;
+    height: calc( var(--portrait-size) + var(--filter-totalheight) + var(--control-height) );
     background: var(--color-blue);
     z-index: 0;
   }
@@ -55,17 +62,14 @@
     grid-row: 1 / 2;
     position: relative;
     margin-left: var(--spacing-outer);
-    margin-bottom: 1em;
+    margin-bottom: var(--filter-space-after);
     display: flex;
     gap: .5em;
   }
   .people__slider__filter button {
-    font-size: calc(0.75 * var(--fontsize-20));
-    line-height: 1;
-    padding: calc(0.6 * var(--fontsize-20)) 
-             calc(0.5 * var(--fontsize-20)) 
-             calc(0.5 * var(--fontsize-20)) 
-             calc(0.5 * var(--fontsize-20));
+    font-size: var(--filter-font-size);
+    line-height: var(--filter-line-height);
+    height: calc( var(--filter-totalheight) - var(--filter-space-after) );
     text-transform: uppercase;
     border: none;
     background: var(--color-grey);
@@ -91,13 +95,13 @@
     display: none;
   }
   .people__slider__item {
-    flex: 0 0 75vw;
+    flex: 0 0 var(--portrait-size);
     padding-right: var(--spacing-outer);
     cursor: pointer;
   }
   .people__slider__item__image {
-    width: 75vw;
-    height: 75vw;
+    width: var(--portrait-size);
+    height: var(--portrait-size);
     /* overflow: hidden; */
     position: relative;
   }
@@ -116,7 +120,7 @@
     align-items: center;
     position: absolute;
     right: 0;
-    top: calc(75vw - var(--control-height));
+    top: calc(var(--portrait-size) - var(--control-height));
     width: var(--control-width);
     height: var(--control-height);
     background: var(--color-grey);
