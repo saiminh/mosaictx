@@ -3,6 +3,11 @@ export const peopleBlock = {
   label: 'People',
   fields: [
     {
+      name: 'anchor',
+      label: 'Anchor link',
+      type: 'string',
+    },
+    {
       name: 'title',
       label: 'Title',
       type: 'string'
@@ -76,12 +81,6 @@ export const peopleBlock = {
           type: 'string'
         }
       ]
-    },
-    {
-      name: 'anchor',
-      label: 'Anchor link',
-      type: 'string',
-      default: 'people'
-    }
+    }   
   ]
 }

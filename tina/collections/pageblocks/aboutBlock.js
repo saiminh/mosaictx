@@ -3,6 +3,11 @@ export const aboutBlock = {
   label: 'About',
   fields: [
     {
+      name: 'anchor',
+      label: 'Anchor link',
+      type: 'string'
+    },
+    {
       name: 'video',
       label: 'Video',
       type: 'image'
@@ -31,11 +36,6 @@ export const aboutBlock = {
       name: 'body',
       label: 'Body',
       type: 'rich-text'
-    },
-    {
-      name: 'anchor',
-      label: 'Anchor link',
-      type: 'string'
     }
   ]
 }

@@ -22,7 +22,6 @@ export const workBlock = {
         },
         button: {
           text: 'Join the team',
-          link: '#'
         }
       },
     }
@@ -57,12 +56,7 @@ export const workBlock = {
               name: 'text',
               label: 'Text',
               type: 'string',
-            },
-            {
-              name: 'link',
-              label: 'Link',
-              type: 'string',
-            },
+            }
           ]
         },
       ]
@@ -72,6 +66,11 @@ export const workBlock = {
       label: 'Values',
       type: 'object',
       fields: [
+        {
+          name: 'anchor',
+          label: 'Anchor Link',
+          type: 'string',
+        },
         {
           name: 'collaboration',
           label: 'Collaboration',
@@ -172,6 +171,11 @@ export const workBlock = {
       label: 'News',
       type: 'object',
       fields: [
+        {
+          name: 'anchor',
+          label: 'Anchor Link',
+          type: 'string',
+        },
         {
           name: 'title',
           label: 'Title',
