@@ -17,7 +17,10 @@ export const Partnerships = (props) => {
             format='svg'
           />
         </figure>
-        <h2 className={styles.intro__headline}><span className={styles.intro__title}>{props.data.intro?.title}</span>{props.data.intro?.headline}</h2>
+        <h2 className={styles.intro__headline} data-tina-field={tinaField(props.data.intro, 'headline')}>
+          <span className={styles.intro__title}>{props.data.intro?.title}</span>
+          {props.data.intro?.headline}
+        </h2>
     </div>
 
     <PartnershipsInterviews data={props.data.interviews} />
