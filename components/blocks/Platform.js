@@ -6,7 +6,7 @@ import { PlatformResults } from './PlatformResults';
 export const Platform = (props) => {
 
   return (
-    <section className={styles.platform}>
+    <section className={styles.platform} id={props.data.anchor}>
 
       <PlatformIntro data={props.data.intro} />
       <PlatformComponents data={props.data.components} />
