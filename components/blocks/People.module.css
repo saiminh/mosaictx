@@ -375,17 +375,36 @@
     text-transform: uppercase;
     margin-right: .5em;
   }
+  .people__slider {
+    --filter-font-size: calc(0.75 * var(--fontsize-20));
+    --filter-padding: calc(0.5 * var(--fontsize-20));
+    --filter-line-height: 1;
+    --filter-space-after: var(--filter-font-size);
+    --filter-totalheight: calc(var(--filter-line-height) * var(--filter-font-size) + 2 * var(--filter-padding) + var(--filter-space-after));
+    --portrait-size: 23vw;
+    position: relative;
+  }
+  .people__slider:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(77vw - 2 * var(--spacing-outer));
+    height: calc( var(--portrait-size) + var(--filter-totalheight) );
+    background: var(--color-blue);
+    z-index: 0;
+  }
   .people__slider__filter {
     position: relative;
     left: calc(31vw - 3 * var(--spacing-outer));
-    margin-bottom: 1em;
+    padding-bottom: var(--filter-space-after);
     display: flex;
     gap: .5em;
   }
   .people__slider__filter button {
-    font-size: calc(0.75 * var(--fontsize-20));
-    line-height: 1;
-    padding: calc(0.5 * var(--fontsize-20));
+    font-size: var(--filter-font-size);
+    line-height: var(--filter-line-height);
+    padding: var(--filter-padding);
     text-transform: uppercase;
     border: none;
     background: var(--color-grey);
@@ -398,19 +417,6 @@
   .people__slider__filter button[data-filter-active] {
     background: var(--color-black);
     color: var(--color-white);
-  }
-  .people__slider {
-    position: relative;
-  }
-  .people__slider:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(77vw - 2 * var(--spacing-outer));
-    height: 23vw;
-    background: var(--color-blue);
-    z-index: 0;
   }
   .people__slider__rail {
     position: relative;
@@ -429,14 +435,14 @@
     display: none;
   }
   .people__slider__item {
-    flex: 0 0 23vw;
+    flex: 0 0 var(--portrait-size);
     /* scroll-snap-align: start; */
     padding-right: var(--spacing-outer);
     cursor: pointer;
   }
   .people__slider__item__image {
-    width: 23vw;
-    height: 23vw;
+    width: var(--portrait-size);
+    height: var(--portrait-size);
     overflow: hidden;
     transition: height 0.3s ease-in-out;
     position: relative;
@@ -488,7 +494,7 @@
   }
   .people__slider__controls {
     position: absolute;
-    top: calc( 23vw - var(--control-height));
+    top: calc( var(--portrait-size) + var(--filter-totalheight) - var(--control-height));
     height: var(--control-width);
     width: calc( 2 * var(--control-width) );
     left: calc(31vw - 3 * var(--spacing-outer) - 2 * var(--control-width)); 
