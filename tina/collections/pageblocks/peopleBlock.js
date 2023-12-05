@@ -8,20 +8,22 @@ export const peopleBlock = {
       type: 'string',
     },
     {
-      name: 'title',
-      label: 'Title',
-      type: 'string'
-    },
-    {
       name: 'titleImage',
       label: 'Title Image',
       type: 'image'
     },
     {
+      name: 'title',
+      label: 'Title',
+      type: 'string'
+    },
+    {
       name: 'peopleheadline',
       label: 'Headline',
       type: 'string',
-      default: 'Our Team'
+      ui: {
+        component: 'textarea'
+      }
     },
     {
       name: 'teamProfile',
