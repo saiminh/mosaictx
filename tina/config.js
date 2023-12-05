@@ -32,8 +32,7 @@ export const config = defineConfig({
   },
   schema: {
     collections: [
-      page, 
-      post
+      page
     ],
   },
 });
