@@ -265,8 +265,16 @@
 }
 .nav__logoicon {
   height: 100%;
-  width: auto;
+  width: 62px;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-yellow);
+}
+.nav__logoicon__gif {
+  width: 30px;
+  height: auto;
 }
 .nav__logoicon svg {
   height: 100%;
