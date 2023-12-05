@@ -55,12 +55,11 @@ export const Nav = (props) => {
 
 
     document.querySelectorAll('.nav__item').forEach((item) => {
-      const target = item.getAttribute('href') || '#home';
-      let targetElement = document.querySelector(target) || null;
-      if (targetElement === null) {
+      const target = item.getAttribute('href') || '';
+      if (target === '') {
         return;
       }
-      
+      let targetElement = document.querySelector(target) || null;
       let options = {
         threshold: 0.1
       }
