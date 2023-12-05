@@ -5,13 +5,21 @@ export const secondaryNavBlock = {
     {
       name: 'title',
       label: 'Title',
-      type: 'string'
+      type: 'string',
+      ui: {
+        component: 'textarea'
+      }
     },
     {
       name: 'nav',
       label: 'Navigation',
       type: 'object',
       list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: `${item.text}`,
+        }),
+      },
       fields: [
         {
           name: 'text',
