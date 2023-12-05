@@ -25,12 +25,18 @@ export const aboutBlock = {
     {
       name: 'bodyhead',
       label: 'Headline',
-      type: 'string'
+      type: 'string',
+      ui: {
+        component: 'textarea'
+      }
     },
     {
       name: 'bodysubhead',
       label: 'Sub Headline',
-      type: 'string'
+      type: 'string',
+      ui: {
+        component: 'textarea'
+      }
     },
     {
       name: 'body',
