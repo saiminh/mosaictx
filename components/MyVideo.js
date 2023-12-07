@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useInView } from 'react-intersection-observer';
 
-export const MyVideo = ({ src, autoPlay, width, height, loop, muted, style, className, onPlay, onEnded, controls, playsInline }) => {
+export const MyVideo = ({ src, autoPlay, width, height, loop, muted, style, className, onPlay, onEnded, controls, playsInline, preload }) => {
 
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
@@ -35,6 +35,7 @@ export const MyVideo = ({ src, autoPlay, width, height, loop, muted, style, clas
       style={style}
       className={className}
       onPlay={onPlay}
+      preload={preload || 'auto'}
       onEnded={onEnded}
       playsInline={playsInline || true }
       controls={controls || false}
