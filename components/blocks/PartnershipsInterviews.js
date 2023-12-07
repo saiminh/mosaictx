@@ -36,11 +36,14 @@ export const PartnershipsInterviews = (props) => {
           </div>
           <figure 
             className={styles.interview__video__interview} 
+            data-paused
             onClick={(e) => {
               if ( !e.target.paused ) {
-                e.target.pause()
+                e.target.parentElement.setAttribute('data-paused', '');
+                e.target.pause();
               } else {
                 e.target.play()
+                e.target.parentElement.removeAttribute('data-paused');
               }
             }}>
             <MyVideo
@@ -55,7 +58,11 @@ export const PartnershipsInterviews = (props) => {
               })}
               width='530'
               height='275'
+              autoPlay={false}
               className={`${styles.interview__video__desktop} videoClickToPlay`}
+              onEnded={(e) => {
+                e.target.parentElement.setAttribute('data-paused', '');
+              }}
             />
           </figure>
           <figure className={styles.interview__video__ambient}>
@@ -70,6 +77,7 @@ export const PartnershipsInterviews = (props) => {
                 dpr: 'auto'
               })}
               loop
+              autoPlay={true}
               muted
             />
           </figure>
