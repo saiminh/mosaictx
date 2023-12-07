@@ -14,7 +14,11 @@ export default function Home(props) {
   });
 
   return (
-    <Layout>
+    <Layout
+      description={data.page.meta?.description}
+      title={data.page.meta?.title}
+      metaimg={data.page.meta?.image}
+    >
       <Blocks blocks={data.page.blocks} />
       <ContactForm />
       <JoinForm />
