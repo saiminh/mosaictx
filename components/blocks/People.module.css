@@ -473,6 +473,9 @@
   }
   .people__slider__item__image img {
     transition: transform 0.3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .people__slider__item:hover .people__slider__item__image img {
     transform: scale(1.1);
