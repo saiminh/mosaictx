@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useInView } from 'react-intersection-observer';
 
-export const MyVideo = ({ src, autoPlay, width, height, loop, muted, style, className, onPlay, playsInline }) => {
+export const MyVideo = ({ src, autoPlay, width, height, loop, muted, style, className, onPlay, onEnded, controls, playsInline }) => {
 
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
@@ -9,11 +9,15 @@ export const MyVideo = ({ src, autoPlay, width, height, loop, muted, style, clas
 
   useEffect(() => {
     if (inView) {
-      //check if entry.target has the autoPlay attribute and if it is true
-      if ( !entry?.target?.autoPlay ) {
+
+      let ap = entry.target.autoplay;
+      console.log(ap);
+      if (!ap) {
         return
+      } else {
+        entry?.target?.style.display !== 'none' && entry?.target?.play();
       }
-      entry?.target?.style.display !== 'none' && entry?.target?.play();
+
     } else {
       entry?.target?.pause();
     }
@@ -31,7 +35,9 @@ export const MyVideo = ({ src, autoPlay, width, height, loop, muted, style, clas
       style={style}
       className={className}
       onPlay={onPlay}
+      onEnded={onEnded}
       playsInline={playsInline || true }
+      controls={controls || false}
     />
   )
 }
