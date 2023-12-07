@@ -16,7 +16,7 @@ export const nextSlide = (e) => {
   nextSlide.style.zIndex = 2;
   gsap.fromTo( [nextSlideText, nextSlideImg], 
     { xPercent: 100 }, 
-    { duration: .4, xPercent: 0, ease: 'back.out(1.2)', stagger: .025 })
+    { duration: .4, xPercent: 0, ease: 'power3.out', stagger: .025 })
 }
 export const prevSlide = () => {
   const slider = document.getElementById('news');
@@ -33,5 +33,5 @@ export const prevSlide = () => {
   prevSlide.style.zIndex = 2;
   gsap.fromTo( [prevSlideText, prevSlideImg], 
     { xPercent: -100 }, 
-    { duration: .4, xPercent: 0, ease: 'back.out(1.2)', stagger: .025 })
+    { duration: .4, xPercent: 0, ease: 'power3.out', stagger: .025 })
 }

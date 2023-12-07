@@ -27,12 +27,12 @@ export const nextSlide = (e) => {
     const firstItem = slider.querySelector('.item[data-hidden-by-filter="false"]');
     slider.querySelector('.rail').appendChild(firstItem);
     gsap.set( items, { xPercent: '+=100' } );
-    gsap.to( items, { xPercent: '-=100', duration: .4, ease: 'back.out(1.7)', onComplete: () => {
+    gsap.to( items, { xPercent: '-=100', duration: .4, ease: 'power3.out', onComplete: () => {
       slider.setAttribute('data-sliding', 'false')
     } } );
   } 
   else {
-    gsap.to( items, { xPercent: '-=100', duration: .4, ease: 'back.out(1.7)', onComplete: () => {
+    gsap.to( items, { xPercent: '-=100', duration: .4, ease: 'power3.out', onComplete: () => {
       slider.setAttribute('data-sliding', 'false')
     } } );
     sliderX <= maxSliderX && slider.setAttribute('data-slider-x', parseInt(sliderX) + 100);
@@ -57,12 +57,12 @@ export const prevSlide = (e) => {
     const lastItem = items[items.length - 1];
     slider.querySelector('.rail').prepend(lastItem); 
     gsap.set( items, { xPercent: '-=100' } );
-    gsap.to( items, { xPercent: '+=100', duration: .4, ease: 'back.out(1.7)', onComplete: () => {
+    gsap.to( items, { xPercent: '+=100', duration: .4, ease: 'power3.out', onComplete: () => {
       slider.setAttribute('data-sliding', 'false')
    } } );
   } 
   else {
-    gsap.to( items, { xPercent: '+=100', duration: .4, ease: 'back.out(1.7)', onComplete: () => {
+    gsap.to( items, { xPercent: '+=100', duration: .4, ease: 'power3.out', onComplete: () => {
       slider.setAttribute('data-sliding', 'false')
    } } );
     sliderX != 0 && slider.setAttribute('data-slider-x', parseInt(sliderX) - 100);
@@ -153,7 +153,7 @@ export const popupSlide = (e) => {
   gsap.to(thispopup.querySelector('.people__popup__item__box'), {
     y: 0,
     duration: .5, 
-    ease: 'back.out(1.1)', 
+    ease: 'power3.out', 
   })
 }
 
@@ -166,7 +166,7 @@ export const closeSlide = (e) => {
   gsap.to(thispopup.querySelector('.people__popup__item__box'), {
     y: '100vh',
     duration: .5, 
-    ease: 'back.out(1.1)', 
+    ease: 'power3.out', 
     onComplete: () => {
       thispopup.setAttribute('data-active', 'false');
     }

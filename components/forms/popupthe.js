@@ -8,7 +8,7 @@ export const popupthe = (popup) => {
   const content = target?.querySelector('.popup__inner > *')
   const clickListener = (e) => {
     gsap.to(target, {duration: 0.5, backgroundColor: 'rgba(0,0,0,0)', ease: 'power2.out'})
-    gsap.to(targetInner, {duration: 0.5, yPercent: 100, ease: 'back.in(1.4)'})
+    gsap.to(targetInner, {duration: 0.5, yPercent: 100, ease: 'power3.in'})
     setTimeout(() => {
       gsap.set(target, {yPercent: 0, backgroundColor: 'rgba(0,0,0,0)'})
       target.removeEventListener('click', clickListener )
@@ -20,7 +20,7 @@ export const popupthe = (popup) => {
   gsap.set(target, {yPercent: -100, backgroundColor: 'rgba(0,0,0,0)'})
   gsap.set(targetInner, {yPercent: 100})
   gsap.to(target, {duration: 0.5, backgroundColor: 'rgba(0,0,0,.5)', ease: 'power2.out'})
-  gsap.to(targetInner, {duration: 0.5, yPercent: 0, ease: 'back.out(1.4)'})
+  gsap.to(targetInner, {duration: 0.5, yPercent: 0, ease: 'power3.out'})
   target?.addEventListener('click', clickListener )
   content?.addEventListener('click', (e) => {
     e.stopPropagation()
