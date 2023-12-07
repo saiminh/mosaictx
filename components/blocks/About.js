@@ -9,7 +9,7 @@ import { MyVideo } from '../MyVideo';
 export const About = (props) => {
 
   const videoURLMobile = getCldVideoUrl({
-    src: props.data.video,
+    src: props.data.video || '',
     width: 120,
     height: 420,
     format: 'mp4',
@@ -19,7 +19,7 @@ export const About = (props) => {
   });
 
   const videoURLDesktop = getCldVideoUrl({
-    src: props.data.video,
+    src: props.data.video || '',
     width: 530,
     height: 275,
     format: 'mp4',
@@ -32,14 +32,14 @@ export const About = (props) => {
     <section className={styles.about} id={props.data.anchor}>
       <div className={styles.about__video} data-tina-field={tinaField(props.data, "video")}>
         <MyVideo
-          src={videoURLDesktop}
+          src={videoURLDesktop || ''}
           loop
           muted
           className={styles.about__video__desktop}
           style={{objectFit: 'cover', objectPosition: 'center', width: '100%', height: '100%' }}
         />
         <MyVideo
-          src={videoURLMobile}
+          src={videoURLMobile || ''}
           loop
           muted
           className={styles.about__video__mobile}
@@ -48,7 +48,7 @@ export const About = (props) => {
       </div>
       <div className={styles.about__image} data-tina-field={tinaField(props.data, "image")}>
         <CldImage
-          src={props.data.image}
+          src={props.data.image || ''}
           alt={props.data.imageAlt ? props.data.imageAlt : 'This image is lacking an alt description'}
           width="787"
           height="885"
