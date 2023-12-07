@@ -4,6 +4,11 @@ import { CldImage } from 'next-cloudinary';
 import { nextSlide, prevSlide} from './workNewsSlider';
 
 export const WorkNews = (props) => {
+
+  if (!props.data) {
+    return null;
+  }
+
   const news = props.data || {};
 
   const dates = news.map(item => item.date);
