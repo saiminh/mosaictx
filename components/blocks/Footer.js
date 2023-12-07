@@ -32,15 +32,17 @@ export const Footer = (props) => {
       </div>
       <div className={styles.footer__address} data-tina-field={tinaField(footer.contactAdress)}>
         <div className={styles.footer__address__image}>
-          <CldImage 
-            src={footer.contactAdress.contactImage}
-            alt="A graphic representing the concept of 'Team'"
-            width="380"
-            height="260"
-            format='webp'
-            crop='fill'
-            gravity='center'
-          />
+          <a href='https://maps.app.goo.gl/H4ito21NzWLCkiUY6' target='_blank' rel='noopener noreferrer'>
+            <CldImage 
+              src={footer.contactAdress.contactImage}
+              alt="An image showing the location of the Mosaic offices"
+              width="380"
+              height="260"
+              format='webp'
+              crop='fill'
+              gravity='center'
+            />
+          </a>
         </div>
         <div className={styles.footer__address__text}>
           <TinaMarkdown 
