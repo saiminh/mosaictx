@@ -9,6 +9,10 @@ export const MyVideo = ({ src, autoPlay, width, height, loop, muted, style, clas
 
   useEffect(() => {
     if (inView) {
+      //check if entry.target has the autoPlay attribute and if it is true
+      if ( !entry?.target?.autoPlay ) {
+        return
+      }
       entry?.target?.style.display !== 'none' && entry?.target?.play();
     } else {
       entry?.target?.pause();
