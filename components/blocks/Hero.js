@@ -37,7 +37,7 @@ export const Hero = (props) => {
           <div className={styles.hero__video} data-tina-field={tinaField(props.data, "heroVideo")}> 
             <MyVideo
               src = {videoURL || ''}
-              width="787"
+              width="780"
               height="885"
               autoPlay
               loop
