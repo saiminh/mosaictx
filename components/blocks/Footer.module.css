@@ -167,6 +167,22 @@
   .footer__address__image,
   .footer__address__text {
     flex: 0 0 50%;
+    position: relative;
+  }
+  .footer__address__image:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='13' viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.9459 3.2982L6.3533 0.0693359L3.55708 1.68392L0.760742 3.2982V9.75593L3.55712 11.3702L6.3533 12.9848L9.14951 11.3702L11.9459 9.75593V3.2982ZM5.85876 1.40713L4.01274 2.47306L2.09855 3.57809L5.88516 5.71909L5.85876 1.40713ZM1.67201 4.38373V8.69605L5.43004 6.50857L1.67201 4.38373ZM2.12107 9.48904L4.0127 10.581L5.85892 11.6471L5.88517 7.29802L2.12107 9.48904ZM6.76991 11.692L10.5463 9.51169L6.79642 7.29805L6.76991 11.692ZM11.0346 8.74174V4.33931L7.25155 6.50855L11.0346 8.74174ZM10.5693 3.55569L6.76974 1.36201L6.79642 5.71911L10.5693 3.55569Z' fill='%23101313'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+    content: '';
+    display: block;
+    background-color: var(--color-yellow);
+    width: var(--fontsize-30);
+    height: var(--fontsize-30);
   }
   .footer__address__image img {
     width: 100%;
