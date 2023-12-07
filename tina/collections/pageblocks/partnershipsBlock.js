@@ -1,6 +1,61 @@
 export const partnershipsBlock = {
   name: 'partnerships',
   label: 'Our Partnerships',
+  ui: {
+    defaultItem: {
+      anchor: 'partnerships',
+      intro: {
+        image: '',
+        title: 'Our Partnerships',
+        headline: 'We work with leading academic institutions and biopharmaceutical companies to advance our pipeline of combination therapies.'
+      },
+      interviews: [
+        {
+          title: 'Interview title',
+          body: {
+            type: 'root',
+            children: [
+              {
+                type: 'p',
+                children: [
+                  {
+                    type: 'text',
+                    text: 'Interview body text',
+                  },
+                ],
+              },
+            ],
+          },
+          interview: '',
+          logo: '',
+          logoAlt: '',
+          name: '',
+          role: '',
+          organisation: '',
+          ambientVideo: ''
+        }
+      ],
+      investors: {
+        title: 'Investors',
+        body: {
+          type: 'root',
+          children: [
+            {
+              type: 'p',
+              children: [
+                {
+                  type: 'text',
+                  text: 'Investors body text',
+                },
+              ],
+            },
+          ],
+        },
+        linkToSynconia: '',
+        linkToCIT: ''
+      }
+    }
+  },
   fields: [
     {
       name: 'anchor',
