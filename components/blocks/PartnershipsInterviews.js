@@ -34,7 +34,15 @@ export const PartnershipsInterviews = (props) => {
               <div className={styles.interview__organisation} data-tina-field={tinaField(interview, 'organisation')}>{interview.organisation}</div>
             </div>
           </div>
-          <figure className={styles.interview__video__interview}>
+          <figure 
+            className={styles.interview__video__interview} 
+            onClick={(e) => {
+              if ( !e.target.paused ) {
+                e.target.pause()
+              } else {
+                e.target.play()
+              }
+            }}>
             <MyVideo
               src={getCldVideoUrl({
                 src: interview.interview || '',
@@ -45,9 +53,9 @@ export const PartnershipsInterviews = (props) => {
                 gravity: 'center',
                 dpr: 'auto'
               })}
-              loop
-              muted
-              className={styles.interview__video__desktop}
+              width='530'
+              height='275'
+              className={`${styles.interview__video__desktop} videoClickToPlay`}
             />
           </figure>
           <figure className={styles.interview__video__ambient}>
