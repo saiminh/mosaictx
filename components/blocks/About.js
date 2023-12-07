@@ -34,6 +34,7 @@ export const About = (props) => {
         <MyVideo
           src={videoURLDesktop || ''}
           loop
+          autoPlay={true}
           muted
           className={styles.about__video__desktop}
           style={{objectFit: 'cover', objectPosition: 'center', width: '100%', height: '100%' }}
