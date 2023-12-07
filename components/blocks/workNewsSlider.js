@@ -2,8 +2,8 @@ import gsap from "gsap";
 
 export const nextSlide = (e) => {
   e.target.toggleAttribute('data-bg-white');
-  const slider = document.getElementById('news');
-  const currentSlide = slider.querySelector('[data-current-news="true"]');
+  const slider = e.target.closest('[data-slider]');
+  const currentSlide = slider.querySelector('[data-current-news="true"]') ;
   const slides = slider.querySelectorAll('.work__news__item');
   const nextSlide = currentSlide.nextElementSibling || slides[0];
 
