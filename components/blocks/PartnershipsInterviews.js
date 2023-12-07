@@ -47,7 +47,7 @@ export const PartnershipsInterviews = (props) => {
               }
             }}>
             <MyVideo
-              src={getCldVideoUrl({
+              src={`${getCldVideoUrl({
                 src: interview.interview || '',
                 width: 530,
                 height: 275,
@@ -55,11 +55,13 @@ export const PartnershipsInterviews = (props) => {
                 crop: 'fill',
                 gravity: 'center',
                 dpr: 'auto'
-              })}
+              })}#t=0.1`}
+              poster
               width='530'
               height='275'
+              preload={'metadata'}
               autoPlay={false}
-              className={`${styles.interview__video__desktop} videoClickToPlay`}
+              className={styles.interview__video__desktop}
               onEnded={(e) => {
                 e.target.parentElement.setAttribute('data-paused', '');
               }}
