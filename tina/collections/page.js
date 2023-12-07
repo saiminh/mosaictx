@@ -12,11 +12,36 @@ import { partnershipsBlock } from './pageblocks/partnershipsBlock';
 import { footerBlock } from './pageblocks/footerBlock';
 
 export default {
-  label: "Page Content",
-  name: "page",
-  path: "content/page",
-  format: "mdx",
+  label: 'Page Content',
+  name: 'page',
+  path: 'content/page',
+  format: 'mdx',
   fields: [
+    {
+      name: 'meta',
+      label: 'Meta/SEO',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          label: 'Title',
+          type: 'string',
+        },
+        {
+          name: 'description',
+          label: 'Description',
+          type: 'string',
+          ui: {
+            component: 'textarea',
+          }
+        },
+        {
+          name: 'image',
+          label: 'Image',
+          type: 'image',
+        },
+      ],
+    },
     {
       type: 'object',
       list: true,
@@ -42,6 +67,9 @@ export default {
       } 
       else if (document._sys.filename === "about") {
         return `/about`;
+      }
+      else {
+        return `/${document._sys.filename}`;
       }
       return undefined;
     },
