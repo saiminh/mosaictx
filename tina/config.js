@@ -20,6 +20,7 @@ export const config = defineConfig({
       return pack.TinaCloudCloudinaryMediaStore;
     },
     // this is the config for the tina cloud media store
+    // we don't need it bcs we use Cloudinary
     // tina: {
     //   publicFolder: "public",
     //   mediaRoot: "uploads",
