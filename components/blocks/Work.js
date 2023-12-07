@@ -46,82 +46,82 @@ export const Work = (props) => {
         </div>
       </div>
       <div className={styles.work__values}>
-        { work.values.collaboration && (
+        { work.values?.collaboration && (
           <div className={`${styles.work__value} ${styles.work__values__collaboration} work__value`}>
             <CldImage
-              src={work.values.collaboration.image || ''}
-              alt={work.values.collaboration.imageAlt ? work.values.collaboration.imageAlt : 'This image is lacking an alt description'}
+              src={work.values?.collaboration.image || ''}
+              alt={work.values?.collaboration.imageAlt ? work.values?.collaboration.imageAlt : 'This image is lacking an alt description'}
               width="787"
               height="885"
               sizes='(max-width: 768px) 73vw, 34vw'
-              data-tina-field={tinaField(work.values.collaboration, 'image')}
+              data-tina-field={tinaField(work.values?.collaboration, 'image')}
             />
-            <h3 className={styles.work__value__title} data-tina-field={tinaField(work.values.collaboration, 'title')}>
-              {work.values.collaboration.title}
+            <h3 className={styles.work__value__title} data-tina-field={tinaField(work.values?.collaboration, 'title')}>
+              {work.values?.collaboration.title}
             </h3>
-            <div className={`${styles.work__value__body} work__value__body`} data-tina-field={tinaField(work.values.collaboration, 'body')}>
-              <TinaMarkdown content={work.values.collaboration.body} />
+            <div className={`${styles.work__value__body} work__value__body`} data-tina-field={tinaField(work.values?.collaboration, 'body')}>
+              <TinaMarkdown content={work.values?.collaboration.body} />
             </div>
           </div>
         ) }
-        { work.values.ambition && (
+        { work.values?.ambition && (
           <div className={`${styles.work__value} ${styles.work__values__ambition} work__value`}>
             <CldImage
-              src={work.values.ambition.image || ''}
-              alt={work.values.ambition.imageAlt ? work.values.ambition.imageAlt : 'This image is lacking an alt description'}
+              src={work.values?.ambition.image || ''}
+              alt={work.values?.ambition.imageAlt ? work.values?.ambition.imageAlt : 'This image is lacking an alt description'}
               width="787"
               height="885"
               sizes='(max-width: 768px) 73vw, 34vw'
-              data-tina-field={tinaField(work.values.ambition, 'image')}
+              data-tina-field={tinaField(work.values?.ambition, 'image')}
             />
-            <h3 className={styles.work__value__title} data-tina-field={tinaField(work.values.ambition, 'title')}>
-              {work.values.ambition.title}
+            <h3 className={styles.work__value__title} data-tina-field={tinaField(work.values?.ambition, 'title')}>
+              {work.values?.ambition.title}
             </h3>
-            <div className={`${styles.work__value__body} work__value__body`} data-tina-field={tinaField(work.values.ambition, 'body')}>
-              <TinaMarkdown content={work.values.ambition.body} />
+            <div className={`${styles.work__value__body} work__value__body`} data-tina-field={tinaField(work.values?.ambition, 'body')}>
+              <TinaMarkdown content={work.values?.ambition.body} />
             </div>
           </div>
         ) }
-        { work.values.resilience && (
+        { work.values?.resilience && (
           <div className={`${styles.work__value} ${styles.work__values__resilience} work__value`}>
             <CldImage
-              src={work.values.resilience.image || ''}
-              alt={work.values.resilience.imageAlt ? work.values.resilience.imageAlt : 'This image is lacking an alt description'}
+              src={work.values?.resilience.image || ''}
+              alt={work.values?.resilience.imageAlt ? work.values?.resilience.imageAlt : 'This image is lacking an alt description'}
               width="787"
               height="885"
               sizes='(max-width: 768px) 73vw, 34vw'
-              data-tina-field={tinaField(work.values.resilience, 'image')}
+              data-tina-field={tinaField(work.values?.resilience, 'image')}
             />
-            <h3 className={styles.work__value__title} data-tina-field={tinaField(work.values.resilience, 'title')}>
-              {work.values.resilience.title}
+            <h3 className={styles.work__value__title} data-tina-field={tinaField(work.values?.resilience, 'title')}>
+              {work.values?.resilience.title}
             </h3>
-            <div className={`${styles.work__value__body} work__value__body`} data-tina-field={tinaField(work.values.resilience, 'body')}>
-              <TinaMarkdown content={work.values.resilience.body} />
+            <div className={`${styles.work__value__body} work__value__body`} data-tina-field={tinaField(work.values?.resilience, 'body')}>
+              <TinaMarkdown content={work.values?.resilience.body} />
             </div>
           </div>
         ) }
-        { work.values.excellence && (
+        { work.values?.excellence && (
           <div className={`${styles.work__value} ${styles.work__values__excellence} work__value`}>
             <CldImage
-              src={work.values.excellence.image || ''}
-              alt={work.values.excellence.imageAlt ? work.values.excellence.imageAlt : 'This image is lacking an alt description'}
+              src={work.values?.excellence.image || ''}
+              alt={work.values?.excellence.imageAlt ? work.values?.excellence.imageAlt : 'This image is lacking an alt description'}
               width="787"
               height="885"
               sizes='(max-width: 768px) 73vw, 34vw'
-              data-tina-field={tinaField(work.values.excellence, 'image')}
+              data-tina-field={tinaField(work.values?.excellence, 'image')}
             />
-            <h3 className={styles.work__value__title} data-tina-field={tinaField(work.values.excellence, 'title')}>
-              {work.values.excellence.title}
+            <h3 className={styles.work__value__title} data-tina-field={tinaField(work.values?.excellence, 'title')}>
+              {work.values?.excellence.title}
             </h3>
-            <div className={`${styles.work__value__body} work__value__body`} data-tina-field={tinaField(work.values.excellence, 'body')}>
-              <TinaMarkdown content={work.values.excellence.body} />
+            <div className={`${styles.work__value__body} work__value__body`} data-tina-field={tinaField(work.values?.excellence, 'body')}>
+              <TinaMarkdown content={work.values?.excellence.body} />
             </div>
           </div>
         ) }
           <figure className={styles.work__values__video}>
             <MyVideo
               src={getCldVideoUrl({
-                src: work.values.video || '',
+                src: work.values?.video || '',
                 width: 275,
                 height: 275,
                 format: 'mp4',
@@ -141,14 +141,14 @@ export const Work = (props) => {
           <h2 className={styles.work__news__header__title} 
               data-tina-field={tinaField(work.news, 'title')}
           >
-            {work.news.title}
+            {work.news?.title}
           </h2>
           <div className={styles.work__news__header__text} data-tina-field={tinaField(work.news, 'body')}>
-            <TinaMarkdown content={work.news.body} />
+            <TinaMarkdown content={work.news?.body} />
           </div>
         </div>
-        <section id={ work.news.anchor ? work.news.anchor : 'news'}>
-          <WorkNews data={work.news.newsItems} />
+        <section id={ work.news?.anchor ? work.news.anchor : 'news'} data-slider >
+          <WorkNews data={work.news?.newsItems} />
         </section>
 
       </div>
