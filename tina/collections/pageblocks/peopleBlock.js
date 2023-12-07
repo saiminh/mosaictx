@@ -30,6 +30,13 @@ export const peopleBlock = {
       label: 'Team Profile',
       type: 'object',
       list: true,
+      ui: {
+        itemProps: (item) => {
+          return {
+            label: `${item.name} ${item.lastname}`,
+          }
+        }
+      },
       fields: [
         {
           name: 'image',
