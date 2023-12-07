@@ -459,7 +459,7 @@
     align-items: center;
     position: absolute;
     right: 0;
-    top: calc(23vw - var(--control-height));
+    top: calc(var(--portrait-size) - var(--control-height));
     width: var(--control-width);
     height: var(--control-height);
     background: var(--color-grey);
