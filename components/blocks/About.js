@@ -42,6 +42,7 @@ export const About = (props) => {
         <MyVideo
           src={videoURLMobile || ''}
           loop
+          autoPlay={true}
           muted
           className={styles.about__video__mobile}
           style={{objectFit: 'cover', objectPosition: 'center', width: '100%', height: '100%' }}
@@ -53,7 +54,6 @@ export const About = (props) => {
           alt={props.data.imageAlt ? props.data.imageAlt : 'This image is lacking an alt description'}
           width="787"
           height="885"
-          style={{ width: '100%', height: 'auto'}}
           sizes='(max-width: 768px) 73vw, 34vw'
         />
       </div>
