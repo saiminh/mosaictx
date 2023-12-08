@@ -107,9 +107,14 @@ export const partnershipsBlock = {
           type: 'rich-text',
         },
         {
-          name: 'interview',
-          label: 'Interview video',
+          name: 'interviewImage',
+          label: 'Interview Image',
           type: 'image',
+        },
+        {
+          name: 'interviewImageAlt',
+          label: 'Interview Image Alt Text',
+          type: 'string',
         },
         {
           name: 'logo',

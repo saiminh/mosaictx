@@ -23,7 +23,7 @@ export const PartnershipsInterviews = (props) => {
                 alt={interview.logoAlt ? interview.logoAlt : 'This image is lacking an alt description'}
                 width="787"
                 height="885"
-                sizes='(max-width: 768px) 73vw, 34vw'
+                sizes='(max-width: 640px) 73vw, 34vw'
                 format='svg'
                 className={styles.interview__info__logo__img}
               />
@@ -34,37 +34,15 @@ export const PartnershipsInterviews = (props) => {
               <div className={styles.interview__organisation} data-tina-field={tinaField(interview, 'organisation')}>{interview.organisation}</div>
             </div>
           </div>
-          <figure 
-            className={styles.interview__video__interview} 
-            data-paused
-            onClick={(e) => {
-              if ( !e.target.paused ) {
-                e.target.parentElement.setAttribute('data-paused', '');
-                e.target.pause();
-              } else {
-                e.target.play()
-                e.target.parentElement.removeAttribute('data-paused');
-              }
-            }}>
-            <MyVideo
-              src={`${getCldVideoUrl({
-                src: interview.interview || '',
-                width: 530,
-                height: 275,
-                format: 'mp4',
-                crop: 'fill',
-                gravity: 'center',
-                dpr: 'auto'
-              })}#t=0.1`}
-              poster
-              width='530'
-              height='275'
-              preload={'metadata'}
-              autoPlay={false}
-              className={styles.interview__video__desktop}
-              onEnded={(e) => {
-                e.target.parentElement.setAttribute('data-paused', '');
-              }}
+          <figure className={styles.interview__video__interview} >
+            <CldImage
+              src={ interview.interviewImage || '' }
+              alt = { interview.interviewImageAlt ? interview.interviewImageAlt : 'Portrait of the person being Interviewed' }
+              width={780}
+              height={620}
+              sizes='(max-width: 640) 70vw, 50vw'
+              className={styles.interview__video__interview__img}
+              data-tina-field={tinaField(interview, 'interviewImage')}
             />
           </figure>
           <figure className={styles.interview__video__ambient}>
