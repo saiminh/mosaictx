@@ -9,6 +9,7 @@ import { peopleBlock } from './pageblocks/peopleBlock';
 import { platformBlock } from './pageblocks/platformBlock';
 import { workBlock } from './pageblocks/workBlock';
 import { partnershipsBlock } from './pageblocks/partnershipsBlock';
+import { longTextBlock } from './pageblocks/longTextBlock';
 import { footerBlock } from './pageblocks/footerBlock';
 
 export default {
@@ -56,6 +57,7 @@ export default {
         platformBlock, 
         partnershipsBlock, 
         workBlock, 
+        longTextBlock,
         footerBlock 
       ],
     },

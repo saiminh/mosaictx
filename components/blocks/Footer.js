@@ -3,6 +3,7 @@ import { tinaField } from "tinacms/dist/react";
 import { CldImage } from 'next-cloudinary';
 import { TinaMarkdown } from 'tinacms/dist/rich-text';
 import { Button } from '../Button';
+import Link from 'next/link';
 import { popupthe } from '../forms/popupthe';
 
 export const Footer = (props) => {
@@ -105,13 +106,13 @@ export const Footer = (props) => {
           </div>
           <div className={styles.footer__hygiene__links}>
             {footer.hygiene.hygieneLinks?.map((item, i) => (
-              <a 
+              <Link 
                 className={styles.footer__hygiene__links__link}
                 key={i}
                 href={item.linkUrl}
               >
                 {item.linkText}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

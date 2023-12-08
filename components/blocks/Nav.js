@@ -1,6 +1,7 @@
 import styles from './Nav.module.css'
 import { tinaField } from "tinacms/dist/react";
 import { useState } from 'react';
+import Link from 'next/link';
 import { useEffect } from 'react';
 import { popupthe } from '../forms/popupthe';
 
@@ -56,9 +57,9 @@ export const Nav = (props) => {
 
     document.querySelectorAll('.nav__item').forEach((item) => {
       const target = item.getAttribute('href') || '';
-      if (target === '') {
-        return;
-      }
+      // check if target starts with a hash
+      if ( target.charAt(0) !== '#' ) { return }
+
       let targetElement = document.querySelector(target) || null;
       let options = {
         threshold: 0.1
@@ -84,7 +85,7 @@ export const Nav = (props) => {
 
   return(
     <div className={`${styles.nav} ${navToggleClass} ${navScrollClass} nav ${navtoggled && 'nav--open' }`}>
-      <a className={styles.nav__logo} href="#home" onClick={() => setToggled(false)}>
+      <Link className={styles.nav__logo} href="/#home" onClick={() => setToggled(false)}>
         <svg width="87" height="20" viewBox="0 0 87 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M63.9468 19.9992C60.3658 19.9992 58.3564 17.2942 58.3564 13.8421C58.3564 10.3384 60.3658 7.65918 63.9468 7.65918C66.4199 7.65918 67.9656 8.94728 68.79 10.7764L66.8579 11.7296C66.1881 10.2354 65.1318 9.69439 63.9468 9.69439C62.0146 9.69439 60.675 11.2659 60.675 13.8421C60.675 16.3925 61.9888 17.964 63.9468 17.964C65.1318 17.964 66.1623 17.4488 66.8579 15.9546L68.79 16.882C67.9399 18.7111 66.4457 19.9992 63.9468 19.9992Z" fill="#101313"/>
           <path d="M57.2783 19.7412H55.037V7.91635H57.2783V19.7412Z" fill="#101313"/>
@@ -96,14 +97,14 @@ export const Nav = (props) => {
           <path d="M82.6155 5.93285L86.3067 11.039H84.4457L81.5235 6.88642L78.6167 11.039H76.7711L80.4623 5.93285L76.8326 0.949707H78.6936L81.5543 4.96391L84.3996 0.949707H86.2298L82.6155 5.93285Z" fill="#101313"/>
           <path d="M76.1306 0.949707V2.45696H72.8854V11.039H71.2551V2.45696H68.0099V0.949707H76.1306Z" fill="#101313"/>
           </svg>
-      </a>
+      </Link>
       <div className={styles.nav__mobile_toggle}>
         <div className={styles.nav__tagline} data-tina-field={tinaField(props.data, "tagline")}>
           {props.data.tagline}
         </div>
         <div className={`${styles.nav__links} nav__links`}>
           {props.data.navItem?.map((item, i) => (
-            <a 
+            <Link 
               key={i} 
               className={`${styles.nav__item} nav__item`} 
               href={item.anchor} 
@@ -114,7 +115,7 @@ export const Nav = (props) => {
               <path d="M5.58871 1.84035L6.58871 0.840352L11.2287 5.48035V7.26035L6.58871 11.9204L5.56871 10.9004L9.42871 7.06035H0.288711V5.66035H9.44871L5.58871 1.84035Z" fill="currentColor"/>
             </svg>
             {item.text}
-            </a>
+            </Link>
           ))}
           <a className={`${styles.nav__item} ${styles.nav__item__cta} nav__item`} onClick={() => popupthe('joinForm')}>
             <svg className={styles.nav__item__arrow} width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">

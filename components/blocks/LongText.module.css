@@ -1,0 +1,17 @@
+.longtext {
+  max-width: 36em;
+  margin: 0 auto;
+  padding: 0 var(--spacing-outer);
+  font-size: var(--fontsize-30);
+  border-top: calc( 1.5 * var(--spacing-outer-large) ) solid var(--color-orange);
+}
+.longtext a {
+  color: var(--color-black);
+  text-decoration: underline;
+}
+
+@media (max-width: 639.9px) {
+  .longtext {
+    font-size: var(--fontsize-20);
+  }
+}

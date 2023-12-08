@@ -94,7 +94,7 @@ export const footerBlock = {
     },
     {
       name: 'hygiene',
-      label: 'The very bottom of it all',
+      label: 'Site hygiene',
       type: 'object',
       fields: [
         {
@@ -130,6 +130,11 @@ export const footerBlock = {
           label: 'Hygiene Links',
           type: 'object',
           list: true,
+          ui: {
+            itemProps: (item) => ({
+              label: item.linkText
+            })
+          },
           fields: [
             {
               name: 'linkText',

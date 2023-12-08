@@ -7,6 +7,7 @@ import { People } from './blocks/People'
 import { Platform } from './blocks/Platform'
 import { Partnerships } from './blocks/Partnerships'
 import { Work } from './blocks/Work'
+import { LongText } from './blocks/LongText'
 import { Footer } from './blocks/Footer'
 
 export const Blocks = (props) => {
@@ -61,6 +62,12 @@ export const Blocks = (props) => {
                 return (
                   <React.Fragment key={i + block.__typename}>
                     <Partnerships data={block} />
+                  </React.Fragment>
+                )
+              case 'PageBlocksLongText':
+                return (
+                  <React.Fragment key={i + block.__typename}>
+                    <LongText data={block} />
                   </React.Fragment>
                 )
               case 'PageBlocksFooter':
