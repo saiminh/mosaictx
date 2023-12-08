@@ -73,3 +73,19 @@ input[type="checkbox"]:checked {
   background-repeat: no-repeat;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' fill='%23000000' height='800px' width='800px' version='1.1' id='Capa_1' viewBox='0 0 490 490' xml:space='preserve'%3E%3Cpolygon points='452.253,28.326 197.831,394.674 29.044,256.875 0,292.469 207.253,461.674 490,54.528 '/%3E%3C/svg%3E");
 }
+@media screen and (min-width: 640px) {
+  .nav + .longtext {
+    padding-top: calc( 1.5 * var(--spacing-outer-large) );
+  }
+  .longtext + footer {
+    margin-top: calc( 1.5 * var(--spacing-outer-large) );
+  }
+}
+@media screen and (max-width: 639.9px) {
+  .nav + .longtext {
+    border-top: calc( 1.5 * var(--spacing-outer-large) ) solid var(--color-grey-dark);
+  }
+  .longtext + footer {
+    margin-top: calc( 1.5 * var(--spacing-outer-large) );
+  }
+}

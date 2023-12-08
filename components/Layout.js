@@ -9,7 +9,7 @@ export const Layout = (props) => {
   }
 
   return (
-    <div>
+    <>
       <Head>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
@@ -25,7 +25,7 @@ export const Layout = (props) => {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <main>{props.children}</main>
-    </div>
+      {props.children}
+    </>
   )
 }
