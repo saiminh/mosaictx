@@ -11,7 +11,6 @@ export const MyVideo = ({ src, autoPlay, width, height, loop, muted, style, clas
     if (inView) {
 
       let ap = entry.target.autoplay;
-      console.log(ap);
       if (!ap) {
         return
       } else {
