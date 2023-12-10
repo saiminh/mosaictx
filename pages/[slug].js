@@ -4,8 +4,13 @@ import { client } from "../tina/__generated__/client";
 import { Blocks } from "../components/Blocks";
 import { ContactForm } from "../components/forms/ContactForm";
 import { JoinForm } from "../components/forms/JoinForm";
+import { useRouter } from "next/router";
 
 export default function Page(props) {
+
+  const router = useRouter();
+  if (router.isFallback)  return <div>Loading...</div>;
+
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
   const { data } = useTina({
     query: props.query,
@@ -26,9 +31,30 @@ export default function Page(props) {
   );
 }
 
-// This is an example of a page generated with Serverside Rendering.
-// This can be switched to a static page by using getStaticProps
-export const getServerSideProps = async ({ params }) => {
+export const getStaticPaths = async () => {
+  const pagesResponse = await client.queries.pageConnection()
+
+  // pagesResponse.edges.map((edge) => {
+  //   return {
+  //     params: {
+  //       slug: edge.node.slug,
+  //     },
+  //   };
+  // });
+  const pageslugs = pagesResponse.data.pageConnection.edges.map((edge) => {
+    return `/${edge.node._sys.filename}`;
+  })
+
+
+  console.log(JSON.stringify(pageslugs));
+
+  return {
+    paths: pageslugs,
+    fallback: true,
+  };
+}
+
+export const getStaticProps = async ({ params }) => {
   const { data, query, variables } = await client.queries.page({
     relativePath: `${params.slug}.mdx`,
   });
