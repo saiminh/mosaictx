@@ -131,7 +131,7 @@ export const Nav = (props) => {
           isMobile ? setToggled(!navtoggled) : setToggled(false)
           // setToggled(!navtoggled)
         }}>
-        <img src='/logo_animation.gif' alt='logo' className={styles.nav__logoicon__gif} />
+        <img src='/logo_animation.webp' alt='logo' className={styles.nav__logoicon__gif} />
       </div>
     </div>
   )
