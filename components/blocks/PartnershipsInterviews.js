@@ -16,7 +16,17 @@ export const PartnershipsInterviews = (props) => {
               <TinaMarkdown content={interview.body} />
             </div>
           </div>
+          <div className={styles.interview__quote}>
+            <blockquote className={styles.interview__quote__text} data-tina-field={tinaField(interview, 'interviewQuote')}>
+              {interview.interviewQuote}
+            </blockquote>
+          </div>
           <div className={styles.interview__info}>
+            <div className={styles.interview__info__text}>
+              <div className={styles.interview__name} data-tina-field={tinaField(interview, 'name')}>{interview.name}</div>
+              <div className={styles.interview__role} data-tina-field={tinaField(interview, 'position')}>{interview.role}</div>
+              <div className={styles.interview__organisation} data-tina-field={tinaField(interview, 'organisation')}>{interview.organisation}</div>
+            </div>
             <figure className={styles.interview__info__logo}>
               <CldImage
                 src={interview.logo || ''}
@@ -28,11 +38,6 @@ export const PartnershipsInterviews = (props) => {
                 className={styles.interview__info__logo__img}
               />
             </figure>
-            <div className={styles.interview__info__text}>
-              <div className={styles.interview__name} data-tina-field={tinaField(interview, 'name')}>{interview.name}</div>
-              <div className={styles.interview__role} data-tina-field={tinaField(interview, 'position')}>{interview.role}</div>
-              <div className={styles.interview__organisation} data-tina-field={tinaField(interview, 'organisation')}>{interview.organisation}</div>
-            </div>
           </div>
           <figure className={styles.interview__video__interview} >
             <CldImage
@@ -40,7 +45,8 @@ export const PartnershipsInterviews = (props) => {
               alt = { interview.interviewImageAlt ? interview.interviewImageAlt : 'Portrait of the person being Interviewed' }
               width={780}
               height={620}
-              sizes='(max-width: 640) 70vw, 50vw'
+              sizes='(max-width: 640) 100vw, 70vw'
+              dpr={2}
               className={styles.interview__video__interview__img}
               data-tina-field={tinaField(interview, 'interviewImage')}
             />

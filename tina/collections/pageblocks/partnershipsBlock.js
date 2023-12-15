@@ -26,7 +26,7 @@ export const partnershipsBlock = {
               },
             ],
           },
-          interview: '',
+          interviewQuote: 'The Sanger Institute is proud to have nurtured and spun out Mosaic Therapeutics from our world leading translational cancer genomics research.  We have every expectation that Mosaic will successfully leverage their exceptional capabilities to improve outcomes for cancer patients worldwide.',
           logo: '',
           logoAlt: '',
           name: '',
@@ -114,6 +114,11 @@ export const partnershipsBlock = {
         {
           name: 'interviewImageAlt',
           label: 'Interview Image Alt Text',
+          type: 'string',
+        },
+        {
+          name: 'interviewQuote',
+          label: 'Interview Quote',
           type: 'string',
         },
         {
