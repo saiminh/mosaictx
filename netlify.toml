@@ -1,7 +1,12 @@
 [[redirects]]
   from = "/"
   to = "https://mosaictx-website.netlify.app/"
+  status = 200
+[[redirects]]
   from = "/admin"
   to = "https://mosaictx-website.netlify.app/admin"
+  status = 200
+[[redirects]]
   from = "/privacy-policy"
   to = "https://mosaictx-website.netlify.app/privacy-policy"
+  status = 200
