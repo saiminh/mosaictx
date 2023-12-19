@@ -18,8 +18,8 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/',
-        destination: 'https://mosaictx-website.netlify.app/',
+        source: '/:path*',
+        destination: 'https://mosaictx-website.netlify.app/:path*',
         basePath: false,
         permanent: true,
       },
