@@ -20,6 +20,7 @@ module.exports = {
       {
         source: '/',
         destination: 'https://mosaictx-website.netlify.app/',
+        basePath: false,
         permanent: true,
       },
     ]
