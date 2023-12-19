@@ -1,7 +1,7 @@
 [[redirects]]
-from = "/"
-to = "https://mosaictx-website.netlify.app/"
-from = "/admin"
-to = "https://mosaictx-website.netlify.app/admin"
-from = "/privacy-policy"
-to = "https://mosaictx-website.netlify.app/privacy-policy"
+  from = "/"
+  to = "https://mosaictx-website.netlify.app/"
+  from = "/admin"
+  to = "https://mosaictx-website.netlify.app/admin"
+  from = "/privacy-policy"
+  to = "https://mosaictx-website.netlify.app/privacy-policy"
